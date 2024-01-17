@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<definitions name="GetOperatorMembershipEndpointService" targetNamespace="http://vodafone.cz/location/dispatcher/getoperatormembership" xmlns="http://schemas.xmlsoap.org/wsdl/" xmlns:ns1="http://www.vodafone.cz/Common/xml/Common" xmlns:tns="http://vodafone.cz/location/dispatcher/getoperatormembership" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <types>
+    <xs:schema targetNamespace="http://vodafone.cz/location/dispatcher/getoperatormembership" version="1.0" xmlns:ns1="http://www.vodafone.cz/Common/xml/Common" xmlns:tns="http://vodafone.cz/location/dispatcher/getoperatormembership" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:import namespace="http://www.vodafone.cz/Common/xml/Common"/>
+   <xs:element name="GetOperatorMembershipRequest" nillable="true" type="tns:getOperatorMembershipRequest"/>
+   <xs:element name="GetOperatorMembershipResponse" nillable="true" type="tns:getOperatorMembershipResponse"/>
+   <xs:complexType name="getOperatorMembershipRequest">
+    <xs:complexContent>
+     <xs:extension base="ns1:Request">
+      <xs:sequence>
+       <xs:element name="msisdn" type="xs:string"/>
+       <xs:element maxOccurs="unbounded" minOccurs="0" name="requestedInfo" nillable="true" type="tns:requestedInfo"/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="getOperatorMembershipResponse">
+    <xs:complexContent>
+     <xs:extension base="ns1:Response">
+      <xs:sequence>
+       <xs:element minOccurs="0" name="operatorId" type="xs:string"/>
+       <xs:element minOccurs="0" name="subOperatorId" type="xs:string"/>
+       <xs:element minOccurs="0" name="migrationStatus" type="xs:string"/>
+      </xs:sequence>
+     </xs:extension>
+    </xs:complexContent>
+   </xs:complexType>
+   <xs:simpleType name="requestedInfo">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="OPERATOR"/>
+     <xs:enumeration value="SUB_OPERATOR"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:schema>
+    <xs:schema elementFormDefault="qualified" targetNamespace="http://www.vodafone.cz/Common/xml/Common" version="1.0" xmlns:tns="http://www.vodafone.cz/Common/xml/Common" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+   <xs:complexType name="Request">
+    <xs:sequence>
+     <xs:element name="header">
+      <xs:complexType>
+       <xs:sequence>
+        <xs:element name="applicationCode" type="xs:string"/>
+        <xs:element name="userId" type="xs:string"/>
+        <xs:element minOccurs="0" name="correlationId" type="xs:string"/>
+       </xs:sequence>
+      </xs:complexType>
+     </xs:element>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Response">
+    <xs:sequence>
+     <xs:element name="returnStatus" type="tns:returnStatusEnum"/>
+     <xs:element minOccurs="0" name="messages" type="tns:MessageCollection"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="MessageCollection">
+    <xs:sequence>
+     <xs:element maxOccurs="unbounded" name="message" type="tns:Message"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Message">
+    <xs:sequence>
+     <xs:element name="messageCode" type="xs:string"/>
+     <xs:element minOccurs="0" name="messageDescription" type="xs:string"/>
+     <xs:element minOccurs="0" name="requestIndx" type="xs:long"/>
+    </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="returnStatusEnum">
+    <xs:restriction base="xs:string">
+     <xs:enumeration value="ERROR"/>
+     <xs:enumeration value="SUCCESS"/>
+    </xs:restriction>
+   </xs:simpleType>
+  </xs:schema>
+  </types>
+  <message name="GetOperatorMembershipService_getOperatorMembership">
+    <part name="GetOperatorMembershipRequest" element="tns:GetOperatorMembershipRequest">
+    </part>
+  </message>
+  <message name="GetOperatorMembershipService_getOperatorMembershipResponse">
+    <part name="GetOperatorMembershipResponse" element="tns:GetOperatorMembershipResponse">
+    </part>
+  </message>
+  <portType name="GetOperatorMembershipService">
+    <operation name="getOperatorMembership" parameterOrder="GetOperatorMembershipRequest">
+      <input message="tns:GetOperatorMembershipService_getOperatorMembership">
+    </input>
+      <output message="tns:GetOperatorMembershipService_getOperatorMembershipResponse">
+    </output>
+    </operation>
+  </portType>
+  <binding name="GetOperatorMembershipServiceBinding" type="tns:GetOperatorMembershipService">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <operation name="getOperatorMembership">
+      <soap:operation soapAction=""/>
+      <input>
+        <soap:body use="literal"/>
+      </input>
+      <output>
+        <soap:body use="literal"/>
+      </output>
+    </operation>
+  </binding>
+  <service name="GetOperatorMembershipEndpointService">
+    <port name="GetOperatorMembershipServicePort" binding="tns:GetOperatorMembershipServiceBinding">
+      <soap:address location="http://172.23.131.123:8480/dispatcher/getOperatorMembershipEndpoint"/>
+    </port>
+  </service>
+</definitions>

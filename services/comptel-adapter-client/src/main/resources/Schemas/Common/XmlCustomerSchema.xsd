@@ -1,0 +1,240 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--version 2.0.1-->
+<!--2.0.1 - Modified reference to XSD Schema-->
+<xs:schema xmlns:custcmn="http://www.vodafone.cz/Common/xml/Customer" xmlns:cmn="http://www.vodafone.cz/Common/xml/Common" xmlns:xs="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.vodafone.cz/Common/xml/Customer" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:import namespace="http://www.vodafone.cz/Common/xml/Common" schemaLocation="../../Schemas/Common/XmlCommonSchema.xsd" />
+  <xs:annotation>
+    <xs:documentation>Customer common XML schema.</xs:documentation>
+  </xs:annotation>
+  <xs:complexType name="ADSLEvent">
+    <xs:annotation>
+      <xs:documentation>Base complex type for all ADSL's connected events.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="cmn:Event">
+        <xs:sequence>
+          <xs:element name="customerAccountNumber" type="custcmn:CustomerAccountNumber">
+            <xs:annotation>
+              <xs:documentation>Customer account number.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="billingAccountNumber" type="custcmn:BillingAccountNumber">
+            <xs:annotation>
+              <xs:documentation>Billing account number.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="ADSLServiceID" type="custcmn:ADSLServiceID">
+            <xs:annotation>
+              <xs:documentation>ADSL Service identifier.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ADSLServiceID">
+    <xs:annotation>
+      <xs:documentation>ADSL Service ID in numeric format.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse" />
+      <xs:minLength value="1" />
+      <xs:pattern value="[0-9]*" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="ICTServiceEvent">
+    <xs:annotation>
+      <xs:documentation>Base complex type for all ICT's connected events.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="cmn:Event">
+        <xs:sequence>
+          <xs:element name="customerAccountNumber" type="custcmn:CustomerAccountNumber">
+            <xs:annotation>
+              <xs:documentation>Customer account number.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="billingAccountNumber" type="custcmn:BillingAccountNumber">
+            <xs:annotation>
+              <xs:documentation>Billing account number.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="serviceID" type="custcmn:ICTServiceID">
+            <xs:annotation>
+              <xs:documentation>ICT Service identifier.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="productCode" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Product code (Siebel part number) specifying exact ICT service product, (MOS, SOHO, …)</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ICTServiceID">
+    <xs:annotation>
+      <xs:documentation>ICT Service ID in numeric format.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse" />
+      <xs:minLength value="1" />
+      <xs:maxLength value="9" />
+      <xs:pattern value="[0-9]*" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="BillingAccountNumber">
+    <xs:annotation>
+      <xs:documentation>Billing account number.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="CustomerAccountNumber">
+    <xs:annotation>
+      <xs:documentation>Customer account number.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:complexType name="CustomerEvent">
+    <xs:annotation>
+      <xs:documentation>Base complex type for all customer's connected events.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="cmn:Event">
+        <xs:sequence>
+          <xs:element name="customerAccountNumber" type="custcmn:CustomerAccountNumber">
+            <xs:annotation>
+              <xs:documentation>Customer account number.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:simpleType name="ICCID">
+    <xs:annotation>
+      <xs:documentation>ICCID in 15-17 digit</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:token">
+      <xs:minLength value="15" />
+      <xs:maxLength value="17" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="Msisdn">
+    <xs:annotation>
+      <xs:documentation>MSISDN in '420777123456' format.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse" />
+      <xs:minLength value="1" />
+      <xs:pattern value="[0-9]*" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="ISDN">
+    <xs:annotation>
+      <xs:documentation>ISDN in '420321123456' format.</xs:documentation>
+    </xs:annotation>
+    <xs:restriction base="xs:string">
+      <xs:whiteSpace value="collapse" />
+      <xs:minLength value="1" />
+      <xs:pattern value="[0-9]*" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:complexType name="RestrictionEvent">
+    <xs:complexContent>
+      <xs:extension base="cmn:Event">
+        <xs:sequence>
+          <xs:element name="customerAccountNumber" type="custcmn:CustomerAccountNumber">
+            <xs:annotation>
+              <xs:documentation>Customer account number.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="msisdn" type="custcmn:Msisdn">
+            <xs:annotation>
+              <xs:documentation>MSISDN of subscriber.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="SubscriberEvent">
+    <xs:annotation>
+      <xs:documentation>Base complex type for all subscriber's connected events.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="cmn:Event">
+        <xs:sequence>
+          <xs:element name="customerAccountNumber" type="custcmn:CustomerAccountNumber">
+            <xs:annotation>
+              <xs:documentation>Customer account number.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="billingAccountNumber" type="custcmn:BillingAccountNumber">
+            <xs:annotation>
+              <xs:documentation>Billing account number.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="msisdn" type="custcmn:Msisdn">
+            <xs:annotation>
+              <xs:documentation>MSISDN of subscriber.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FixSubscriberEvent">
+    <xs:annotation>
+      <xs:documentation>Base complex type for all fix subscriber's connected events.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="cmn:Event">
+        <xs:sequence>
+          <xs:element name="customerAccountNumber" type="custcmn:CustomerAccountNumber">
+            <xs:annotation>
+              <xs:documentation>Customer account number.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="billingAccountNumber" type="custcmn:BillingAccountNumber">
+            <xs:annotation>
+              <xs:documentation>Billing account number.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="isdn" type="custcmn:ISDN">
+            <xs:annotation>
+              <xs:documentation>ISDN of subscriber.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="FMSEvent">
+    <xs:annotation>
+      <xs:documentation>Base complex type for all FMS's connected events.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="cmn:Event">
+        <xs:sequence>
+          <xs:element name="customerAccountNumber" type="custcmn:CustomerAccountNumber">
+            <xs:annotation>
+              <xs:documentation>Customer account number.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="billingAccountNumber" type="custcmn:BillingAccountNumber">
+            <xs:annotation>
+              <xs:documentation>Billing account number.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="msisdn" type="custcmn:Msisdn">
+            <xs:annotation>
+              <xs:documentation>FMS Service identifier.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

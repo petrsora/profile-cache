@@ -1,0 +1,10 @@
+<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:prof="http://vodafone.cz/bmg/profile">
+    <soapenv:Header/>
+    <soapenv:Body>
+        <prof:getProfile>
+            <!--Optional:-->
+            <subscriber>420777350243</subscriber>
+            <provideOperatorId>true</provideOperatorId>
+        </prof:getProfile>
+    </soapenv:Body>
+</soapenv:Envelope>

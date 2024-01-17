@@ -1,0 +1,190 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cz.vodafone</groupId>
+    <artifactId>profilecache</artifactId>
+    <packaging>pom</packaging>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <version>10.0-SNAPSHOT</version>
+    <description />
+    <properties>
+    </properties>
+    <modules>
+        <module>applications</module>
+        <module>core</module>
+        <module>events</module>
+        <module>services</module>
+    </modules>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>cz.vodafone.profilecache</groupId>
+                <artifactId>core</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cz.vodafone.profilecache.services</groupId>
+                <artifactId>location-dispatcher-client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cz.vodafone.profilecache.services</groupId>
+                <artifactId>tibco-events</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cz.vodafone.profilecache.services</groupId>
+                <artifactId>tibco-jms-client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cz.vodafone.profilecache.applications</groupId>
+                <artifactId>profile-provider</artifactId>
+                <version>${project.version}</version>
+                <type>war</type>
+            </dependency>
+
+            <dependency>
+                <groupId>cz.vodafone.profilecache</groupId>
+                <artifactId>events</artifactId>
+                <version>${project.version}</version>
+                <type>ejb</type>
+            </dependency>
+
+            <dependency>
+                <groupId>cz.vodafone.profilecache.services</groupId>
+                <artifactId>configuration</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>cz.vodafone.profilecache.services</groupId>
+                <artifactId>configuration-ejb</artifactId>
+                <version>${project.version}</version>
+                <type>ejb</type>
+            </dependency>
+
+            <dependency>
+                <groupId>cz.vodafone.profilecache.services</groupId>
+                <artifactId>comptel-adapter-client</artifactId>
+                <version>${project.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.spec</groupId>
+                <artifactId>jboss-javaee-6.0</artifactId>
+                <version>3.0.2.Final</version>
+                <type>pom</type>
+                <scope>import</scope>
+                <!-- http://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html#Importing_Dependencies -->
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.spec.javax.jms</groupId>
+                <artifactId>jboss-jms-api_2.0_spec</artifactId>
+                <version>1.0.0.Final</version>
+                <scope>provided</scope>
+            </dependency>
+
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>4.11</version>
+            </dependency>
+            <dependency>
+                <groupId>log4j</groupId>
+                <artifactId>log4j</artifactId>
+                <version>1.2.16</version>
+            </dependency>
+
+            <dependency>
+                <groupId>net.spy</groupId>
+                <artifactId>spymemcached</artifactId>
+                <version>2.9.0</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.oracle</groupId>
+                <artifactId>ojdbc6</artifactId>
+                <version>6</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.ws.plugins</groupId>
+                <artifactId>maven-jaxws-tools-plugin</artifactId>
+                <version>1.1.1.Final</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.jboss.ws.cxf</groupId>
+                <artifactId>jbossws-cxf-client</artifactId>
+                <version>4.1.1.Final</version>
+            </dependency>
+
+            <dependency>
+                <groupId>tibjms</groupId>
+                <artifactId>tibjms</artifactId>
+                <version>6.0.1</version>
+            </dependency>
+            <dependency>
+                <!-- Library responsible for password generation. Provided by TIBCO team. -->
+                <groupId>com.tibco</groupId>
+                <artifactId>uuid</artifactId>
+                <version>1.0</version>
+            </dependency>
+            <dependency>
+                <groupId>org.jvnet.jaxb2.maven2</groupId>
+                <artifactId>maven-jaxb2-plugin</artifactId>
+                <version>0.8.3</version>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-shade-plugin</artifactId>
+                <version>2.1</version>
+            </dependency>
+            <dependency>
+                <groupId>javax.activation</groupId>
+                <artifactId>activation</artifactId>
+                <version>1.1</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    <!--distributionManagement>
+        <repository>
+            <id>archiva.internal</id>
+            <name>Internal Release Repository</name>
+            <url>
+                dav:http://s1java31.oskarmobil.cz:8080/archiva/repository/internal
+            </url>
+        </repository>
+        <snapshotRepository>
+            <id>archiva.snapshots</id>
+            <name>Internal Snapshot Repository</name>
+            <url>
+                dav:http://s1java31.oskarmobil.cz:8080/archiva/repository/snapshots
+            </url>
+        </snapshotRepository>
+    </distributionManagement>
+    <scm>
+        <connection>scm:svn:http://w1iisq01.oskarmobil.cz:8080/svn/ibm_java/profile-cache/trunk</connection>
+        <developerConnection>scm:svn:http://w1iisq01.oskarmobil.cz:8080/svn/ibm_java/profile-cache/trunk
+        </developerConnection>
+    </scm-->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.1</version>
+                <!-- best lock down version of the plugin too -->
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 sp2 U (http://www.altova.com) by Tibor Lopusan (IBM) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://www.vodafone.cz/Common/xml/Common" targetNamespace="http://www.vodafone.cz/Common/xml/Common" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:annotation>
+		<xs:documentation>Common XML schema.</xs:documentation>
+	</xs:annotation>
+	<xs:complexType name="AuditInfo">
+		<xs:annotation>
+			<xs:documentation>Entity audit information.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="createdBy" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Username.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lastUpdatedBy" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Username.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="creationDate" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Entity creation date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="lastUpdateDate" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Entity last update date.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:simpleType name="ReturnStatusEnum">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="SUCCESS">
+				<xs:annotation>
+					<xs:documentation>Return status of request processed successfully.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+			<xs:enumeration value="ERROR">
+				<xs:annotation>
+					<xs:documentation>Returns status corresponding to failed processing of request that failure was expected error actually application error. In case of system errors the service should return exception defined in namespace http://www.vodafone.cz/Common/xml/Error.</xs:documentation>
+				</xs:annotation>
+			</xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NonEmptyString">
+		<xs:annotation>
+			<xs:documentation>Simple type for mandatory string.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:minLength value="1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="NonEmptyStringNonWhitespaceOnly">
+		<xs:annotation>
+			<xs:documentation>Simple type for mandatory string and also whitespaces only strings excluded.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="cmn:NonEmptyString">
+			<xs:whiteSpace value="collapse"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="Request">
+		<xs:annotation>
+			<xs:documentation>Root class for all XML requests.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="header">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="applicationCode" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>Identification of application, which calls the interface</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="userId" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>Identification of user, which calls the interface</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="correlationId" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Correlation Id. Optional field for request tracking in logs etc..</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Response">
+		<xs:annotation>
+			<xs:documentation>Root class for all XML responses.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="returnStatus" type="cmn:ReturnStatusEnum">
+				<xs:annotation>
+					<xs:documentation>Return status of request processing e.g. SUCCESS or ERROR.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element ref="cmn:messages" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Event">
+		<xs:annotation>
+			<xs:documentation>Root class for all events.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="header">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="correlationId" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>Correlation identifier is mandatory tracking value, used for logging.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="eventTimeStamp" type="xs:dateTime">
+							<xs:annotation>
+								<xs:documentation>Date and time when event was generated.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="applicationCode" type="xs:string" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Application domain name that generated event.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="effectiveDate" type="xs:dateTime">
+							<xs:annotation>
+								<xs:documentation>Date and time when event is effective.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Message">
+		<xs:sequence>
+			<xs:element name="messageCode" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Message code that is unique identifier.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="messageDescription" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Description of message.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="requestIndx" type="xs:long" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Index of input request that the message connects to.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="message" type="cmn:Message"/>
+	<xs:complexType name="MessageCollection">
+		<xs:sequence>
+			<xs:element ref="cmn:message" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="messages" type="cmn:MessageCollection">
+		<xs:annotation>
+			<xs:documentation>Message collection in case of error. Content and the case when they are presented depend on the service</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:complexType name="ManagedEntity">
+		<xs:annotation>
+			<xs:documentation>Root class for all amanged entities.</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="auditInfo" type="cmn:AuditInfo">
+				<xs:annotation>
+					<xs:documentation>Audit information.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="NameValuePair">
+		<xs:sequence>
+			<xs:element name="name" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The name of the dynamic parameter</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="value" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>The value of the dynamic parameter</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+</xs:schema>

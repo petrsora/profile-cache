@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2006 sp2 U (http://www.altova.com) by Marco Montesissa (ACCENTURE SPA) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/pe/EngineTypes" targetNamespace="http://www.tibco.com/pe/EngineTypes" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="ErrorReport">
+		<xs:sequence>
+			<xs:element name="StackTrace" type="xs:string" form="unqualified" minOccurs="0"/>
+			<xs:element name="Msg" type="xs:string" form="unqualified" minOccurs="0"/>
+			<xs:element name="FullClass" type="xs:string" form="unqualified" minOccurs="0"/>
+			<xs:element name="Class" type="xs:string" form="unqualified" minOccurs="0"/>
+			<xs:element name="ProcessStack" type="xs:string" form="unqualified" minOccurs="0"/>
+			<xs:element name="MsgCode" type="xs:string" form="unqualified" minOccurs="0"/>
+			<xs:element name="Data" type="tns:anydata" form="unqualified" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ProcessContext">
+		<xs:sequence>
+			<xs:element name="ProcessId" type="xs:long" form="unqualified" minOccurs="0"/>
+			<xs:element name="EngineName" type="xs:string" form="unqualified" minOccurs="0"/>
+			<xs:element name="ProjectName" type="xs:string" form="unqualified" minOccurs="0"/>
+			<xs:element name="RestartedFromCheckpoint" type="xs:boolean" form="unqualified" minOccurs="0"/>
+			<xs:element name="TrackingInfo" type="xs:string" form="unqualified" minOccurs="0" maxOccurs="unbounded"/>
+			<xs:element name="CustomId" type="xs:string" form="unqualified" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="anydata">
+		<xs:sequence>
+			<xs:any namespace="##any" processContents="skip"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="CorrelationValue" type="xs:string"/>
+	<xs:element name="ErrorReport" type="tns:ErrorReport"/>
+	<xs:element name="ProcessContext" type="tns:ProcessContext"/>
+</xs:schema>

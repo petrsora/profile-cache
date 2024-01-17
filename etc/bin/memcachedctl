@@ -1,0 +1,73 @@
+#!/bin/bash
+
+# configuration
+PID_FILE=/app01/profcach/var/memcached.pid
+MEMCACHED_OPTS="-p 11211 -u 0 -d -m 1024 -M -v -P $PID_FILE"
+MEMCACHED_OUT=/app01/profcach/log/memcached.out
+
+# functions
+is_running() {
+  if [ -f "$PID_FILE" ]; then
+    if ps -p `cat "$PID_FILE"` | grep `cat $PID_FILE` > /dev/null; then
+      # running
+      return 1
+    else
+      echo "removing stale pid file"
+      rm -f "$PID_FILE"
+
+      # not running
+      return 0
+    fi
+  else
+    # not running
+    return 0
+  fi
+}
+
+# main
+case $1 in
+  'start')
+    echo "starting memcached ..."
+    is_running
+    if [ $? -eq 1 ]; then
+      echo "memcached is already running"
+      exit 1
+    fi
+
+    cat $MEMCACHED_OUT | bzip2 > $MEMCACHED_OUT.`date +%y%m%d%H%M%S`.bz2
+    /opt/csw/bin/memcached $MEMCACHED_OPTS >> $MEMCACHED_OUT 2>&1 
+    echo "memcached started"
+    ;;
+  'stop')
+    echo "stopping memcached ..."
+    is_running
+    if [ $? -eq 0 ]; then
+      echo "memcached is not running"
+      exit 1
+    fi
+
+    PID=`cat $PID_FILE`
+    kill $PID
+    for i in 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20; do
+      if  ps -p $PID > /dev/null; then
+        sleep 1; echo -n "."
+      else
+        rm -f "$PID_FILE"
+        echo "memcached stopped successfully"
+        break
+      fi
+    done
+
+    if [ -f "$PID_FILE" ]; then
+      echo "memcached was not stopped - consider kill -9"
+    fi
+
+    ;;
+  'restart')
+    $0 stop
+    $0 start
+    ;;
+  *)
+    echo "usage: $0 {start|stop|restart}"
+    ;;
+esac

@@ -1,0 +1,3310 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:int="http://internal" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:err="http://www.vodafone.cz/Common/xml/Error" xmlns:tns="http://www.vodafone.cz/ComptelAdapter/wsdl/Services/1.1" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:cas="http://www.vodafone.cz/ComptelAdapter/xml/Services/1.1" xmlns:cmn="http://www.vodafone.cz/Common/xml/Common" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsdlPfx="http://www.vodafone.cz/ComptelAdapter/wsdl/Services/1.1" xmlns:sp="http://www.vodafone.cz/common/xml/ServiceProvisioning" targetNamespace="http://www.vodafone.cz/ComptelAdapter/wsdl/Services/1.1">
+	<wsdl:import namespace="http://www.vodafone.cz/ComptelAdapter/xml/Services/1.1" location="../Schemas/ComptelAdapter/ComptelAdapterServices.1.1.xsd"/>
+	<wsdl:import namespace="http://www.vodafone.cz/Common/xml/Error" location="../Schemas/Common/XmlErrorSchema.xsd"/>
+	<wsdl:message name="DeleteAaaProfileRequest">
+		<wsdl:part name="request" element="cas:deleteAaaProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteAaaProfileResponse">
+		<wsdl:part name="response" element="cas:deleteAaaProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetAaaProfileRequest">
+		<wsdl:part name="request" element="cas:getAaaProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetAaaProfileResponse">
+		<wsdl:part name="response" element="cas:getAaaProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteAcsProfileRequest">
+		<wsdl:part name="request" element="cas:deleteAcsProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteAcsProfileResponse">
+		<wsdl:part name="response" element="cas:deleteAcsProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetAcsProfileRequest">
+		<wsdl:part name="request" element="cas:getAcsProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetAcsProfileResponse">
+		<wsdl:part name="response" element="cas:getAcsProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateAlternativeRoamingProviderRequest">
+		<wsdl:part name="request" element="cas:createAlternativeRoamingProviderRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateAlternativeRoamingProviderResponse">
+		<wsdl:part name="response" element="cas:createAlternativeRoamingProviderResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteAlternativeRoamingProviderRequest">
+		<wsdl:part name="request" element="cas:deleteAlternativeRoamingProviderRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteAlternativeRoamingProviderResponse">
+		<wsdl:part name="response" element="cas:deleteAlternativeRoamingProviderResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetAlternativeRoamingProviderRequest">
+		<wsdl:part name="request" element="cas:getAlternativeRoamingProviderRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetAlternativeRoamingProviderResponse">
+		<wsdl:part name="response" element="cas:getAlternativeRoamingProviderResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetBarringByCustomerRequest">
+		<wsdl:part name="request" element="cas:setBarringByCustomerRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetBarringByCustomerResponse">
+		<wsdl:part name="response" element="cas:setBarringByCustomerResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetBarringByCustomerRequest">
+		<wsdl:part name="request" element="cas:getBarringByCustomerRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetBarringByCustomerResponse">
+		<wsdl:part name="response" element="cas:getBarringByCustomerResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetBarringByInRequest">
+		<wsdl:part name="request" element="cas:setBarringByInRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetBarringByInResponse">
+		<wsdl:part name="response" element="cas:setBarringByInResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetBarringByOperatorRequest">
+		<wsdl:part name="request" element="cas:setBarringByOperatorRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetBarringByOperatorResponse">
+		<wsdl:part name="response" element="cas:setBarringByOperatorResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetBarringByOperatorRequest">
+		<wsdl:part name="request" element="cas:getBarringByOperatorRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetBarringByOperatorResponse">
+		<wsdl:part name="response" element="cas:getBarringByOperatorResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetCallForwardingRequest">
+		<wsdl:part name="request" element="cas:setCallForwardingRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetCallForwardingResponse">
+		<wsdl:part name="response" element="cas:setCallForwardingResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetCallForwardingRequest">
+		<wsdl:part name="request" element="cas:getCallForwardingRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetCallForwardingResponse">
+		<wsdl:part name="response" element="cas:getCallForwardingResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateCallHoldRequest">
+		<wsdl:part name="request" element="cas:createCallHoldRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateCallHoldResponse">
+		<wsdl:part name="response" element="cas:createCallHoldResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteCallHoldRequest">
+		<wsdl:part name="request" element="cas:deleteCallHoldRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteCallHoldResponse">
+		<wsdl:part name="response" element="cas:deleteCallHoldResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetCallHoldRequest">
+		<wsdl:part name="request" element="cas:getCallHoldRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetCallHoldResponse">
+		<wsdl:part name="response" element="cas:getCallHoldResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateCallWaitingRequest">
+		<wsdl:part name="request" element="cas:createCallWaitingRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateCallWaitingResponse">
+		<wsdl:part name="response" element="cas:createCallWaitingResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetCallWaitingRequest">
+		<wsdl:part name="request" element="cas:setCallWaitingRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetCallWaitingResponse">
+		<wsdl:part name="response" element="cas:setCallWaitingResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteCallWaitingRequest">
+		<wsdl:part name="request" element="cas:deleteCallWaitingRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteCallWaitingResponse">
+		<wsdl:part name="response" element="cas:deleteCallWaitingResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetCallWaitingRequest">
+		<wsdl:part name="request" element="cas:getCallWaitingRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetCallWaitingResponse">
+		<wsdl:part name="response" element="cas:getCallWaitingResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateClirRequest">
+		<wsdl:part name="request" element="cas:createClirRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateClirResponse">
+		<wsdl:part name="response" element="cas:createClirResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetClirRequest">
+		<wsdl:part name="request" element="cas:setClirRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetClirResponse">
+		<wsdl:part name="response" element="cas:setClirResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteClirRequest">
+		<wsdl:part name="request" element="cas:deleteClirRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteClirResponse">
+		<wsdl:part name="response" element="cas:deleteClirResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetClirRequest">
+		<wsdl:part name="request" element="cas:getClirRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetClirResponse">
+		<wsdl:part name="response" element="cas:getClirResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetCurContentFilterRequest">
+		<wsdl:part name="request" element="cas:setCurContentFilterRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetCurContentFilterResponse">
+		<wsdl:part name="response" element="cas:setCurContentFilterResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteCurContentFilterRequest">
+		<wsdl:part name="request" element="cas:deleteCurContentFilterRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteCurContentFilterResponse">
+		<wsdl:part name="response" element="cas:deleteCurContentFilterResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetCurContentFilterRequest">
+		<wsdl:part name="request" element="cas:getCurContentFilterRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetCurContentFilterResponse">
+		<wsdl:part name="response" element="cas:getCurContentFilterResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteDeleteSubscriberRequest">
+		<wsdl:part name="request" element="cas:deleteDeleteSubscriberRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteDeleteSubscriberResponse">
+		<wsdl:part name="response" element="cas:deleteDeleteSubscriberResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateGprsRequest">
+		<wsdl:part name="request" element="cas:createGprsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateGprsResponse">
+		<wsdl:part name="response" element="cas:createGprsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetGprsRequest">
+		<wsdl:part name="request" element="cas:setGprsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetGprsResponse">
+		<wsdl:part name="response" element="cas:setGprsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteGprsRequest">
+		<wsdl:part name="request" element="cas:deleteGprsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteGprsResponse">
+		<wsdl:part name="response" element="cas:deleteGprsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetGprsRequest">
+		<wsdl:part name="request" element="cas:getGprsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetGprsResponse">
+		<wsdl:part name="response" element="cas:getGprsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateGprsProfileRequest">
+		<wsdl:part name="request" element="cas:createGprsProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateGprsProfileResponse">
+		<wsdl:part name="response" element="cas:createGprsProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetGprsProfileRequest">
+		<wsdl:part name="request" element="cas:setGprsProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetGprsProfileResponse">
+		<wsdl:part name="response" element="cas:setGprsProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteGprsProfileRequest">
+		<wsdl:part name="request" element="cas:deleteGprsProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteGprsProfileResponse">
+		<wsdl:part name="response" element="cas:deleteGprsProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetGprsProfileRequest">
+		<wsdl:part name="request" element="cas:getGprsProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetGprsProfileResponse">
+		<wsdl:part name="response" element="cas:getGprsProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetGprsProfileCostControlRequest">
+		<wsdl:part name="request" element="cas:setGprsProfileCostControlRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetGprsProfileCostControlResponse">
+		<wsdl:part name="response" element="cas:setGprsProfileCostControlResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetGprsProfileCostControlRequest">
+		<wsdl:part name="request" element="cas:getGprsProfileCostControlRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetGprsProfileCostControlResponse">
+		<wsdl:part name="response" element="cas:getGprsProfileCostControlResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateGprsProfileFupBundleRequest">
+		<wsdl:part name="request" element="cas:createGprsProfileFupBundleRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateGprsProfileFupBundleResponse">
+		<wsdl:part name="response" element="cas:createGprsProfileFupBundleResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateGprsProfilePricePlanRequest">
+		<wsdl:part name="request" element="cas:createGprsProfilePricePlanRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateGprsProfilePricePlanResponse">
+		<wsdl:part name="response" element="cas:createGprsProfilePricePlanResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetGprsProfilePricePlanRequest">
+		<wsdl:part name="request" element="cas:setGprsProfilePricePlanRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetGprsProfilePricePlanResponse">
+		<wsdl:part name="response" element="cas:setGprsProfilePricePlanResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteGprsProfilePricePlanRequest">
+		<wsdl:part name="request" element="cas:deleteGprsProfilePricePlanRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteGprsProfilePricePlanResponse">
+		<wsdl:part name="response" element="cas:deleteGprsProfilePricePlanResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetGprsProfilePricePlanRequest">
+		<wsdl:part name="request" element="cas:getGprsProfilePricePlanRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetGprsProfilePricePlanResponse">
+		<wsdl:part name="response" element="cas:getGprsProfilePricePlanResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateImsiChangeRequest">
+		<wsdl:part name="request" element="cas:createImsiChangeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateImsiChangeResponse">
+		<wsdl:part name="response" element="cas:createImsiChangeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetImsiChangeRequest">
+		<wsdl:part name="request" element="cas:setImsiChangeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetImsiChangeResponse">
+		<wsdl:part name="response" element="cas:setImsiChangeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteImsiChangeRequest">
+		<wsdl:part name="request" element="cas:deleteImsiChangeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteImsiChangeResponse">
+		<wsdl:part name="response" element="cas:deleteImsiChangeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetImsiChangeRequest">
+		<wsdl:part name="request" element="cas:getImsiChangeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetImsiChangeResponse">
+		<wsdl:part name="response" element="cas:getImsiChangeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateLocalBreakOutRequest">
+		<wsdl:part name="request" element="cas:createLocalBreakOutRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateLocalBreakOutResponse">
+		<wsdl:part name="response" element="cas:createLocalBreakOutResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteLocalBreakOutRequest">
+		<wsdl:part name="request" element="cas:deleteLocalBreakOutRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteLocalBreakOutResponse">
+		<wsdl:part name="response" element="cas:deleteLocalBreakOutResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetLocalBreakOutRequest">
+		<wsdl:part name="request" element="cas:getLocalBreakOutRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetLocalBreakOutResponse">
+		<wsdl:part name="response" element="cas:getLocalBreakOutResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateMcaRequest">
+		<wsdl:part name="request" element="cas:createMcaRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateMcaResponse">
+		<wsdl:part name="response" element="cas:createMcaResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetMcaRequest">
+		<wsdl:part name="request" element="cas:setMcaRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetMcaResponse">
+		<wsdl:part name="response" element="cas:setMcaResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteMcaRequest">
+		<wsdl:part name="request" element="cas:deleteMcaRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteMcaResponse">
+		<wsdl:part name="response" element="cas:deleteMcaResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetMcaRequest">
+		<wsdl:part name="request" element="cas:getMcaRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetMcaResponse">
+		<wsdl:part name="response" element="cas:getMcaResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateMmsRequest">
+		<wsdl:part name="request" element="cas:createMmsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateMmsResponse">
+		<wsdl:part name="response" element="cas:createMmsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetMmsRequest">
+		<wsdl:part name="request" element="cas:setMmsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetMmsResponse">
+		<wsdl:part name="response" element="cas:setMmsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteMmsRequest">
+		<wsdl:part name="request" element="cas:deleteMmsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteMmsResponse">
+		<wsdl:part name="response" element="cas:deleteMmsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetMmsRequest">
+		<wsdl:part name="request" element="cas:getMmsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetMmsResponse">
+		<wsdl:part name="response" element="cas:getMmsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateMsisdnChangeRequest">
+		<wsdl:part name="request" element="cas:createMsisdnChangeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateMsisdnChangeResponse">
+		<wsdl:part name="response" element="cas:createMsisdnChangeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetMsisdnChangeRequest">
+		<wsdl:part name="request" element="cas:setMsisdnChangeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetMsisdnChangeResponse">
+		<wsdl:part name="response" element="cas:setMsisdnChangeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteMsisdnChangeRequest">
+		<wsdl:part name="request" element="cas:deleteMsisdnChangeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteMsisdnChangeResponse">
+		<wsdl:part name="response" element="cas:deleteMsisdnChangeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetMsisdnChangeRequest">
+		<wsdl:part name="request" element="cas:getMsisdnChangeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetMsisdnChangeResponse">
+		<wsdl:part name="response" element="cas:getMsisdnChangeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateOcsBundleRequest">
+		<wsdl:part name="request" element="cas:createOcsBundleRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateOcsBundleResponse">
+		<wsdl:part name="response" element="cas:createOcsBundleResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetOcsBundleRequest">
+		<wsdl:part name="request" element="cas:setOcsBundleRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetOcsBundleResponse">
+		<wsdl:part name="response" element="cas:setOcsBundleResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteOcsBundleRequest">
+		<wsdl:part name="request" element="cas:deleteOcsBundleRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteOcsBundleResponse">
+		<wsdl:part name="response" element="cas:deleteOcsBundleResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetOcsBundleRequest">
+		<wsdl:part name="request" element="cas:getOcsBundleRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetOcsBundleResponse">
+		<wsdl:part name="response" element="cas:getOcsBundleResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateOcsDiscountRequest">
+		<wsdl:part name="request" element="cas:createOcsDiscountRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateOcsDiscountResponse">
+		<wsdl:part name="response" element="cas:createOcsDiscountResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetOcsDiscountRequest">
+		<wsdl:part name="request" element="cas:setOcsDiscountRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetOcsDiscountResponse">
+		<wsdl:part name="response" element="cas:setOcsDiscountResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteOcsDiscountRequest">
+		<wsdl:part name="request" element="cas:deleteOcsDiscountRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteOcsDiscountResponse">
+		<wsdl:part name="response" element="cas:deleteOcsDiscountResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetOcsDiscountRequest">
+		<wsdl:part name="request" element="cas:getOcsDiscountRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetOcsDiscountResponse">
+		<wsdl:part name="response" element="cas:getOcsDiscountResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateOcsProfileRequest">
+		<wsdl:part name="request" element="cas:createOcsProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateOcsProfileResponse">
+		<wsdl:part name="response" element="cas:createOcsProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetOcsProfileRequest">
+		<wsdl:part name="request" element="cas:setOcsProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetOcsProfileResponse">
+		<wsdl:part name="response" element="cas:setOcsProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteOcsProfileRequest">
+		<wsdl:part name="request" element="cas:deleteOcsProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteOcsProfileResponse">
+		<wsdl:part name="response" element="cas:deleteOcsProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetOcsProfileRequest">
+		<wsdl:part name="request" element="cas:getOcsProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetOcsProfileResponse">
+		<wsdl:part name="response" element="cas:getOcsProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetOcsRechargeRequest">
+		<wsdl:part name="request" element="cas:setOcsRechargeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetOcsRechargeResponse">
+		<wsdl:part name="response" element="cas:setOcsRechargeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreatePortedNumberRequest">
+		<wsdl:part name="request" element="cas:createPortedNumberRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreatePortedNumberResponse">
+		<wsdl:part name="response" element="cas:createPortedNumberResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetPortedNumberRequest">
+		<wsdl:part name="request" element="cas:setPortedNumberRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetPortedNumberResponse">
+		<wsdl:part name="response" element="cas:setPortedNumberResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeletePortedNumberRequest">
+		<wsdl:part name="request" element="cas:deletePortedNumberRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeletePortedNumberResponse">
+		<wsdl:part name="response" element="cas:deletePortedNumberResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetPortedNumberRequest">
+		<wsdl:part name="request" element="cas:getPortedNumberRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetPortedNumberResponse">
+		<wsdl:part name="response" element="cas:getPortedNumberResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreatePortedNumberNotificationRequest">
+		<wsdl:part name="request" element="cas:createPortedNumberNotificationRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreatePortedNumberNotificationResponse">
+		<wsdl:part name="response" element="cas:createPortedNumberNotificationResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeletePortedNumberNotificationRequest">
+		<wsdl:part name="request" element="cas:deletePortedNumberNotificationRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeletePortedNumberNotificationResponse">
+		<wsdl:part name="response" element="cas:deletePortedNumberNotificationResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetPortedNumberNotificationRequest">
+		<wsdl:part name="request" element="cas:getPortedNumberNotificationRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetPortedNumberNotificationResponse">
+		<wsdl:part name="response" element="cas:getPortedNumberNotificationResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateProfileRequest">
+		<wsdl:part name="request" element="cas:createProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateProfileResponse">
+		<wsdl:part name="response" element="cas:createProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetProfileRequest">
+		<wsdl:part name="request" element="cas:setProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetProfileResponse">
+		<wsdl:part name="response" element="cas:setProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteProfileRequest">
+		<wsdl:part name="request" element="cas:deleteProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteProfileResponse">
+		<wsdl:part name="response" element="cas:deleteProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetProfileRequest">
+		<wsdl:part name="request" element="cas:getProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetProfileResponse">
+		<wsdl:part name="response" element="cas:getProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetVoiceMailRequest">
+		<wsdl:part name="request" element="cas:setVoiceMailRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetVoiceMailResponse">
+		<wsdl:part name="response" element="cas:setVoiceMailResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteVoiceMailRequest">
+		<wsdl:part name="request" element="cas:deleteVoiceMailRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteVoiceMailResponse">
+		<wsdl:part name="response" element="cas:deleteVoiceMailResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetVoiceMailRequest">
+		<wsdl:part name="request" element="cas:getVoiceMailRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetVoiceMailResponse">
+		<wsdl:part name="response" element="cas:getVoiceMailResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateVoiceMailDestinationRequest">
+		<wsdl:part name="request" element="cas:createVoiceMailDestinationRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateVoiceMailDestinationResponse">
+		<wsdl:part name="response" element="cas:createVoiceMailDestinationResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetVoiceMailDestinationRequest">
+		<wsdl:part name="request" element="cas:setVoiceMailDestinationRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetVoiceMailDestinationResponse">
+		<wsdl:part name="response" element="cas:setVoiceMailDestinationResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteVoiceMailDestinationRequest">
+		<wsdl:part name="request" element="cas:deleteVoiceMailDestinationRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteVoiceMailDestinationResponse">
+		<wsdl:part name="response" element="cas:deleteVoiceMailDestinationResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetVoiceMailPinRequest">
+		<wsdl:part name="request" element="cas:setVoiceMailPinRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetVoiceMailPinResponse">
+		<wsdl:part name="response" element="cas:setVoiceMailPinResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateEpsSubscriptionRequest">
+		<wsdl:part name="request" element="cas:createEpsSubscriptionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateEpsSubscriptionResponse">
+		<wsdl:part name="response" element="cas:createEpsSubscriptionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetEpsSubscriptionRequest">
+		<wsdl:part name="request" element="cas:setEpsSubscriptionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetEpsSubscriptionResponse">
+		<wsdl:part name="response" element="cas:setEpsSubscriptionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteEpsSubscriptionRequest">
+		<wsdl:part name="request" element="cas:deleteEpsSubscriptionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteEpsSubscriptionResponse">
+		<wsdl:part name="response" element="cas:deleteEpsSubscriptionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetEpsSubscriptionRequest">
+		<wsdl:part name="request" element="cas:getEpsSubscriptionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetEpsSubscriptionResponse">
+		<wsdl:part name="response" element="cas:getEpsSubscriptionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateEpsApnRequest">
+		<wsdl:part name="request" element="cas:createEpsApnRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateEpsApnResponse">
+		<wsdl:part name="response" element="cas:createEpsApnResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteEpsApnRequest">
+		<wsdl:part name="request" element="cas:deleteEpsApnRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteEpsApnResponse">
+		<wsdl:part name="response" element="cas:deleteEpsApnResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetEpsApnRequest">
+		<wsdl:part name="request" element="cas:getEpsApnRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetEpsApnResponse">
+		<wsdl:part name="response" element="cas:getEpsApnResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateEpsImsiChangeRequest">
+		<wsdl:part name="request" element="cas:createEpsImsiChangeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateEpsImsiChangeResponse">
+		<wsdl:part name="response" element="cas:createEpsImsiChangeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateOcsRCRequest">
+		<wsdl:part name="request" element="cas:createOcsRCRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateOcsRCResponse">
+		<wsdl:part name="response" element="cas:createOcsRCResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteOcsRCRequest">
+		<wsdl:part name="request" element="cas:deleteOcsRCRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteOcsRCResponse">
+		<wsdl:part name="response" element="cas:deleteOcsRCResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetOcsRCRequest">
+		<wsdl:part name="request" element="cas:getOcsRCRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetOcsRCResponse">
+		<wsdl:part name="response" element="cas:getOcsRCResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetOcsRCRequest">
+		<wsdl:part name="request" element="cas:setOcsRCRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetOcsRCResponse">
+		<wsdl:part name="response" element="cas:setOcsRCResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetOcsBucketRequest">
+		<wsdl:part name="request" element="cas:setOcsBucketRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetOcsBucketResponse">
+		<wsdl:part name="response" element="cas:setOcsBucketResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteOcsBucketRequest">
+		<wsdl:part name="request" element="cas:deleteOcsBucketRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteOcsBucketResponse">
+		<wsdl:part name="response" element="cas:deleteOcsBucketResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetOcsBucketRequest">
+		<wsdl:part name="request" element="cas:getOcsBucketRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetOcsBucketResponse">
+		<wsdl:part name="response" element="cas:getOcsBucketResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetGprsProfileSharedFupGroupRequest">
+		<wsdl:part name="request" element="cas:getGprsProfileSharedFupGroupRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetGprsProfileSharedFupGroupResponse">
+		<wsdl:part name="response" element="cas:getGprsProfileSharedFupGroupResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetPcrfProfileRequest">
+		<wsdl:part name="request" element="cas:setPcrfProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetPcrfProfileResponse">
+		<wsdl:part name="response" element="cas:setPcrfProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetPcrfProfileRequest">
+		<wsdl:part name="request" element="cas:getPcrfProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetPcrfProfileResponse">
+		<wsdl:part name="response" element="cas:getPcrfProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateGprsProfilePeriodRequest">
+		<wsdl:part name="request" element="cas:createGprsProfilePeriodRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateGprsProfilePeriodResponse">
+		<wsdl:part name="response" element="cas:createGprsProfilePeriodResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateOcsFnFBundleRequest">
+		<wsdl:part name="request" element="cas:createOcsFnFBundleRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateOcsFnFBundleResponse">
+		<wsdl:part name="response" element="cas:createOcsFnFBundleResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetOcsFnFBundleRequest">
+		<wsdl:part name="request" element="cas:setOcsFnFBundleRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetOcsFnFBundleResponse">
+		<wsdl:part name="response" element="cas:setOcsFnFBundleResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteOcsFnFBundleRequest">
+		<wsdl:part name="request" element="cas:deleteOcsFnFBundleRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteOcsFnFBundleResponse">
+		<wsdl:part name="response" element="cas:deleteOcsFnFBundleResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateAtosVpnRequest">
+		<wsdl:part name="request" element="cas:createAtosVpnRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateAtosVpnResponse">
+		<wsdl:part name="response" element="cas:createAtosVpnResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteAtosVpnRequest">
+		<wsdl:part name="request" element="cas:deleteAtosVpnRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteAtosVpnResponse">
+		<wsdl:part name="response" element="cas:deleteAtosVpnResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateAtosEndUsersRequest">
+		<wsdl:part name="request" element="cas:createAtosEndUsersRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateAtosEndUsersResponse">
+		<wsdl:part name="response" element="cas:createAtosEndUsersResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateAtosExtRequest">
+		<wsdl:part name="request" element="cas:createAtosExtRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateAtosExtResponse">
+		<wsdl:part name="response" element="cas:createAtosExtResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetAtosExtRequest">
+		<wsdl:part name="request" element="cas:setAtosExtRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetAtosExtResponse">
+		<wsdl:part name="response" element="cas:setAtosExtResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteAtosExtRequest">
+		<wsdl:part name="request" element="cas:deleteAtosExtRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteAtosExtResponse">
+		<wsdl:part name="response" element="cas:deleteAtosExtResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateAtosExtTransferRequest">
+		<wsdl:part name="request" element="cas:createAtosExtTransferRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateAtosExtTransferResponse">
+		<wsdl:part name="response" element="cas:createAtosExtTransferResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateDnsSubscriptionRequest">
+		<wsdl:part name="request" element="cas:createDnsSubscriptionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateDnsSubscriptionResponse">
+		<wsdl:part name="response" element="cas:createDnsSubscriptionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteDnsSubscriptionRequest">
+		<wsdl:part name="request" element="cas:deleteDnsSubscriptionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteDnsSubscriptionResponse">
+		<wsdl:part name="response" element="cas:deleteDnsSubscriptionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetDnsSubscriptionRequest">
+		<wsdl:part name="request" element="cas:getDnsSubscriptionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetDnsSubscriptionResponse">
+		<wsdl:part name="response" element="cas:getDnsSubscriptionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateImsSubscriptionRequest">
+		<wsdl:part name="request" element="cas:createImsSubscriptionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateImsSubscriptionResponse">
+		<wsdl:part name="response" element="cas:createImsSubscriptionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetImsSubscriptionRequest">
+		<wsdl:part name="request" element="cas:setImsSubscriptionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetImsSubscriptionResponse">
+		<wsdl:part name="response" element="cas:setImsSubscriptionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteImsSubscriptionRequest">
+		<wsdl:part name="request" element="cas:deleteImsSubscriptionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteImsSubscriptionResponse">
+		<wsdl:part name="response" element="cas:deleteImsSubscriptionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetImsSubscriptionRequest">
+		<wsdl:part name="request" element="cas:getImsSubscriptionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetImsSubscriptionResponse">
+		<wsdl:part name="response" element="cas:getImsSubscriptionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateUmpSipCredRequest">
+		<wsdl:part name="request" element="cas:createUmpSipCredRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateUmpSipCredResponse">
+		<wsdl:part name="response" element="cas:createUmpSipCredResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteUmpSipCredRequest">
+		<wsdl:part name="request" element="cas:deleteUmpSipCredRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteUmpSipCredResponse">
+		<wsdl:part name="response" element="cas:deleteUmpSipCredResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetUmpSipCredRequest">
+		<wsdl:part name="request" element="cas:setUmpSipCredRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetUmpSipCredResponse">
+		<wsdl:part name="response" element="cas:setUmpSipCredResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetUmpHardwareRequest">
+		<wsdl:part name="request" element="cas:getUmpHardwareRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetUmpHardwareResponse">
+		<wsdl:part name="response" element="cas:getUmpHardwareResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateUmpHardwareRequest">
+		<wsdl:part name="request" element="cas:createUmpHardwareRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateUmpHardwareResponse">
+		<wsdl:part name="response" element="cas:createUmpHardwareResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteUmpHardwareRequest">
+		<wsdl:part name="request" element="cas:deleteUmpHardwareRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteUmpHardwareResponse">
+		<wsdl:part name="response" element="cas:deleteUmpHardwareResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetUmpHardwareRequest">
+		<wsdl:part name="request" element="cas:setUmpHardwareRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetUmpHardwareResponse">
+		<wsdl:part name="response" element="cas:setUmpHardwareResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetSuppServiceRequest">
+		<wsdl:part name="request" element="cas:setSuppServiceRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetSuppServiceResponse">
+		<wsdl:part name="response" element="cas:setSuppServiceResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetSuppServiceRequest">
+		<wsdl:part name="request" element="cas:getSuppServiceRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetSuppServiceResponse">
+		<wsdl:part name="response" element="cas:getSuppServiceResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateMtasSubscriptionRequest">
+		<wsdl:part name="request" element="cas:createMtasSubscriptionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateMtasSubscriptionResponse">
+		<wsdl:part name="response" element="cas:createMtasSubscriptionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SetMtasSubscriptionRequest">
+		<wsdl:part name="request" element="cas:setMtasSubscriptionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SetMtasSubscriptionResponse">
+		<wsdl:part name="response" element="cas:setMtasSubscriptionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteMtasSubscriptionRequest">
+		<wsdl:part name="request" element="cas:deleteMtasSubscriptionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteMtasSubscriptionResponse">
+		<wsdl:part name="response" element="cas:deleteMtasSubscriptionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GetMtasSubscriptionRequest">
+		<wsdl:part name="request" element="cas:getMtasSubscriptionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GetMtasSubscriptionResponse">
+		<wsdl:part name="response" element="cas:getMtasSubscriptionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="Exception">
+		<wsdl:part name="exception" element="err:exception"/>
+	</wsdl:message>
+	<wsdl:message name="ComptelAdapterHeader">
+		<wsdl:part name="comptelAdapterHeader" element="cas:comptelAdapterHeader"/>
+	</wsdl:message>
+	<wsdl:portType name="ComptelAdapterServices">
+		<wsdl:operation name="DeleteAaaProfile">
+			<wsdl:input message="tns:DeleteAaaProfileRequest"/>
+			<wsdl:output message="tns:DeleteAaaProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetAaaProfile">
+			<wsdl:input message="tns:GetAaaProfileRequest"/>
+			<wsdl:output message="tns:GetAaaProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteAcsProfile">
+			<wsdl:input message="tns:DeleteAcsProfileRequest"/>
+			<wsdl:output message="tns:DeleteAcsProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetAcsProfile">
+			<wsdl:input message="tns:GetAcsProfileRequest"/>
+			<wsdl:output message="tns:GetAcsProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateAlternativeRoamingProvider">
+			<wsdl:input message="tns:CreateAlternativeRoamingProviderRequest"/>
+			<wsdl:output message="tns:CreateAlternativeRoamingProviderResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteAlternativeRoamingProvider">
+			<wsdl:input message="tns:DeleteAlternativeRoamingProviderRequest"/>
+			<wsdl:output message="tns:DeleteAlternativeRoamingProviderResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetAlternativeRoamingProvider">
+			<wsdl:input message="tns:GetAlternativeRoamingProviderRequest"/>
+			<wsdl:output message="tns:GetAlternativeRoamingProviderResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetBarringByCustomer">
+			<wsdl:input message="tns:SetBarringByCustomerRequest"/>
+			<wsdl:output message="tns:SetBarringByCustomerResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetBarringByCustomer">
+			<wsdl:input message="tns:GetBarringByCustomerRequest"/>
+			<wsdl:output message="tns:GetBarringByCustomerResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetBarringByIn">
+			<wsdl:input message="tns:SetBarringByInRequest"/>
+			<wsdl:output message="tns:SetBarringByInResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetBarringByOperator">
+			<wsdl:input message="tns:SetBarringByOperatorRequest"/>
+			<wsdl:output message="tns:SetBarringByOperatorResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetBarringByOperator">
+			<wsdl:input message="tns:GetBarringByOperatorRequest"/>
+			<wsdl:output message="tns:GetBarringByOperatorResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetCallForwarding">
+			<wsdl:input message="tns:SetCallForwardingRequest"/>
+			<wsdl:output message="tns:SetCallForwardingResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetCallForwarding">
+			<wsdl:input message="tns:GetCallForwardingRequest"/>
+			<wsdl:output message="tns:GetCallForwardingResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateCallHold">
+			<wsdl:input message="tns:CreateCallHoldRequest"/>
+			<wsdl:output message="tns:CreateCallHoldResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteCallHold">
+			<wsdl:input message="tns:DeleteCallHoldRequest"/>
+			<wsdl:output message="tns:DeleteCallHoldResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetCallHold">
+			<wsdl:input message="tns:GetCallHoldRequest"/>
+			<wsdl:output message="tns:GetCallHoldResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateCallWaiting">
+			<wsdl:input message="tns:CreateCallWaitingRequest"/>
+			<wsdl:output message="tns:CreateCallWaitingResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetCallWaiting">
+			<wsdl:input message="tns:SetCallWaitingRequest"/>
+			<wsdl:output message="tns:SetCallWaitingResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteCallWaiting">
+			<wsdl:input message="tns:DeleteCallWaitingRequest"/>
+			<wsdl:output message="tns:DeleteCallWaitingResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetCallWaiting">
+			<wsdl:input message="tns:GetCallWaitingRequest"/>
+			<wsdl:output message="tns:GetCallWaitingResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateClir">
+			<wsdl:input message="tns:CreateClirRequest"/>
+			<wsdl:output message="tns:CreateClirResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetClir">
+			<wsdl:input message="tns:SetClirRequest"/>
+			<wsdl:output message="tns:SetClirResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteClir">
+			<wsdl:input message="tns:DeleteClirRequest"/>
+			<wsdl:output message="tns:DeleteClirResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetClir">
+			<wsdl:input message="tns:GetClirRequest"/>
+			<wsdl:output message="tns:GetClirResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetCurContentFilter">
+			<wsdl:input message="tns:SetCurContentFilterRequest"/>
+			<wsdl:output message="tns:SetCurContentFilterResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteCurContentFilter">
+			<wsdl:input message="tns:DeleteCurContentFilterRequest"/>
+			<wsdl:output message="tns:DeleteCurContentFilterResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetCurContentFilter">
+			<wsdl:input message="tns:GetCurContentFilterRequest"/>
+			<wsdl:output message="tns:GetCurContentFilterResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteDeleteSubscriber">
+			<wsdl:input message="tns:DeleteDeleteSubscriberRequest"/>
+			<wsdl:output message="tns:DeleteDeleteSubscriberResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateGprs">
+			<wsdl:input message="tns:CreateGprsRequest"/>
+			<wsdl:output message="tns:CreateGprsResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetGprs">
+			<wsdl:input message="tns:SetGprsRequest"/>
+			<wsdl:output message="tns:SetGprsResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteGprs">
+			<wsdl:input message="tns:DeleteGprsRequest"/>
+			<wsdl:output message="tns:DeleteGprsResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetGprs">
+			<wsdl:input message="tns:GetGprsRequest"/>
+			<wsdl:output message="tns:GetGprsResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateGprsProfile">
+			<wsdl:input message="tns:CreateGprsProfileRequest"/>
+			<wsdl:output message="tns:CreateGprsProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetGprsProfile">
+			<wsdl:input message="tns:SetGprsProfileRequest"/>
+			<wsdl:output message="tns:SetGprsProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteGprsProfile">
+			<wsdl:input message="tns:DeleteGprsProfileRequest"/>
+			<wsdl:output message="tns:DeleteGprsProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetGprsProfile">
+			<wsdl:input message="tns:GetGprsProfileRequest"/>
+			<wsdl:output message="tns:GetGprsProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetGprsProfileCostControl">
+			<wsdl:input message="tns:SetGprsProfileCostControlRequest"/>
+			<wsdl:output message="tns:SetGprsProfileCostControlResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetGprsProfileCostControl">
+			<wsdl:input message="tns:GetGprsProfileCostControlRequest"/>
+			<wsdl:output message="tns:GetGprsProfileCostControlResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateGprsProfileFupBundle">
+			<wsdl:input message="tns:CreateGprsProfileFupBundleRequest"/>
+			<wsdl:output message="tns:CreateGprsProfileFupBundleResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateGprsProfilePricePlan">
+			<wsdl:input message="tns:CreateGprsProfilePricePlanRequest"/>
+			<wsdl:output message="tns:CreateGprsProfilePricePlanResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetGprsProfilePricePlan">
+			<wsdl:input message="tns:SetGprsProfilePricePlanRequest"/>
+			<wsdl:output message="tns:SetGprsProfilePricePlanResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteGprsProfilePricePlan">
+			<wsdl:input message="tns:DeleteGprsProfilePricePlanRequest"/>
+			<wsdl:output message="tns:DeleteGprsProfilePricePlanResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetGprsProfilePricePlan">
+			<wsdl:input message="tns:GetGprsProfilePricePlanRequest"/>
+			<wsdl:output message="tns:GetGprsProfilePricePlanResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateImsiChange">
+			<wsdl:input message="tns:CreateImsiChangeRequest"/>
+			<wsdl:output message="tns:CreateImsiChangeResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetImsiChange">
+			<wsdl:input message="tns:SetImsiChangeRequest"/>
+			<wsdl:output message="tns:SetImsiChangeResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteImsiChange">
+			<wsdl:input message="tns:DeleteImsiChangeRequest"/>
+			<wsdl:output message="tns:DeleteImsiChangeResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetImsiChange">
+			<wsdl:input message="tns:GetImsiChangeRequest"/>
+			<wsdl:output message="tns:GetImsiChangeResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateLocalBreakOut">
+			<wsdl:input message="tns:CreateLocalBreakOutRequest"/>
+			<wsdl:output message="tns:CreateLocalBreakOutResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteLocalBreakOut">
+			<wsdl:input message="tns:DeleteLocalBreakOutRequest"/>
+			<wsdl:output message="tns:DeleteLocalBreakOutResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetLocalBreakOut">
+			<wsdl:input message="tns:GetLocalBreakOutRequest"/>
+			<wsdl:output message="tns:GetLocalBreakOutResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateMca">
+			<wsdl:input message="tns:CreateMcaRequest"/>
+			<wsdl:output message="tns:CreateMcaResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetMca">
+			<wsdl:input message="tns:SetMcaRequest"/>
+			<wsdl:output message="tns:SetMcaResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteMca">
+			<wsdl:input message="tns:DeleteMcaRequest"/>
+			<wsdl:output message="tns:DeleteMcaResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetMca">
+			<wsdl:input message="tns:GetMcaRequest"/>
+			<wsdl:output message="tns:GetMcaResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateMms">
+			<wsdl:input message="tns:CreateMmsRequest"/>
+			<wsdl:output message="tns:CreateMmsResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetMms">
+			<wsdl:input message="tns:SetMmsRequest"/>
+			<wsdl:output message="tns:SetMmsResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteMms">
+			<wsdl:input message="tns:DeleteMmsRequest"/>
+			<wsdl:output message="tns:DeleteMmsResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetMms">
+			<wsdl:input message="tns:GetMmsRequest"/>
+			<wsdl:output message="tns:GetMmsResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateMsisdnChange">
+			<wsdl:input message="tns:CreateMsisdnChangeRequest"/>
+			<wsdl:output message="tns:CreateMsisdnChangeResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetMsisdnChange">
+			<wsdl:input message="tns:SetMsisdnChangeRequest"/>
+			<wsdl:output message="tns:SetMsisdnChangeResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteMsisdnChange">
+			<wsdl:input message="tns:DeleteMsisdnChangeRequest"/>
+			<wsdl:output message="tns:DeleteMsisdnChangeResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetMsisdnChange">
+			<wsdl:input message="tns:GetMsisdnChangeRequest"/>
+			<wsdl:output message="tns:GetMsisdnChangeResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateOcsBundle">
+			<wsdl:input message="tns:CreateOcsBundleRequest"/>
+			<wsdl:output message="tns:CreateOcsBundleResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetOcsBundle">
+			<wsdl:input message="tns:SetOcsBundleRequest"/>
+			<wsdl:output message="tns:SetOcsBundleResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteOcsBundle">
+			<wsdl:input message="tns:DeleteOcsBundleRequest"/>
+			<wsdl:output message="tns:DeleteOcsBundleResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetOcsBundle">
+			<wsdl:input message="tns:GetOcsBundleRequest"/>
+			<wsdl:output message="tns:GetOcsBundleResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateOcsDiscount">
+			<wsdl:input message="tns:CreateOcsDiscountRequest"/>
+			<wsdl:output message="tns:CreateOcsDiscountResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetOcsDiscount">
+			<wsdl:input message="tns:SetOcsDiscountRequest"/>
+			<wsdl:output message="tns:SetOcsDiscountResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteOcsDiscount">
+			<wsdl:input message="tns:DeleteOcsDiscountRequest"/>
+			<wsdl:output message="tns:DeleteOcsDiscountResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetOcsDiscount">
+			<wsdl:input message="tns:GetOcsDiscountRequest"/>
+			<wsdl:output message="tns:GetOcsDiscountResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateOcsProfile">
+			<wsdl:input message="tns:CreateOcsProfileRequest"/>
+			<wsdl:output message="tns:CreateOcsProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetOcsProfile">
+			<wsdl:input message="tns:SetOcsProfileRequest"/>
+			<wsdl:output message="tns:SetOcsProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteOcsProfile">
+			<wsdl:input message="tns:DeleteOcsProfileRequest"/>
+			<wsdl:output message="tns:DeleteOcsProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetOcsProfile">
+			<wsdl:input message="tns:GetOcsProfileRequest"/>
+			<wsdl:output message="tns:GetOcsProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetOcsRecharge">
+			<wsdl:input message="tns:SetOcsRechargeRequest"/>
+			<wsdl:output message="tns:SetOcsRechargeResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreatePortedNumber">
+			<wsdl:input message="tns:CreatePortedNumberRequest"/>
+			<wsdl:output message="tns:CreatePortedNumberResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetPortedNumber">
+			<wsdl:input message="tns:SetPortedNumberRequest"/>
+			<wsdl:output message="tns:SetPortedNumberResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeletePortedNumber">
+			<wsdl:input message="tns:DeletePortedNumberRequest"/>
+			<wsdl:output message="tns:DeletePortedNumberResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetPortedNumber">
+			<wsdl:input message="tns:GetPortedNumberRequest"/>
+			<wsdl:output message="tns:GetPortedNumberResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreatePortedNumberNotification">
+			<wsdl:input message="tns:CreatePortedNumberNotificationRequest"/>
+			<wsdl:output message="tns:CreatePortedNumberNotificationResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeletePortedNumberNotification">
+			<wsdl:input message="tns:DeletePortedNumberNotificationRequest"/>
+			<wsdl:output message="tns:DeletePortedNumberNotificationResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetPortedNumberNotification">
+			<wsdl:input message="tns:GetPortedNumberNotificationRequest"/>
+			<wsdl:output message="tns:GetPortedNumberNotificationResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateProfile">
+			<wsdl:input message="tns:CreateProfileRequest"/>
+			<wsdl:output message="tns:CreateProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetProfile">
+			<wsdl:input message="tns:SetProfileRequest"/>
+			<wsdl:output message="tns:SetProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteProfile">
+			<wsdl:input message="tns:DeleteProfileRequest"/>
+			<wsdl:output message="tns:DeleteProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetProfile">
+			<wsdl:input message="tns:GetProfileRequest"/>
+			<wsdl:output message="tns:GetProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetVoiceMail">
+			<wsdl:input message="tns:SetVoiceMailRequest"/>
+			<wsdl:output message="tns:SetVoiceMailResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteVoiceMail">
+			<wsdl:input message="tns:DeleteVoiceMailRequest"/>
+			<wsdl:output message="tns:DeleteVoiceMailResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetVoiceMail">
+			<wsdl:input message="tns:GetVoiceMailRequest"/>
+			<wsdl:output message="tns:GetVoiceMailResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateVoiceMailDestination">
+			<wsdl:input message="tns:CreateVoiceMailDestinationRequest"/>
+			<wsdl:output message="tns:CreateVoiceMailDestinationResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetVoiceMailDestination">
+			<wsdl:input message="tns:SetVoiceMailDestinationRequest"/>
+			<wsdl:output message="tns:SetVoiceMailDestinationResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteVoiceMailDestination">
+			<wsdl:input message="tns:DeleteVoiceMailDestinationRequest"/>
+			<wsdl:output message="tns:DeleteVoiceMailDestinationResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetVoiceMailPin">
+			<wsdl:input message="tns:SetVoiceMailPinRequest"/>
+			<wsdl:output message="tns:SetVoiceMailPinResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateEpsSubscription">
+			<wsdl:input message="tns:CreateEpsSubscriptionRequest"/>
+			<wsdl:output message="tns:CreateEpsSubscriptionResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetEpsSubscription">
+			<wsdl:input message="tns:SetEpsSubscriptionRequest"/>
+			<wsdl:output message="tns:SetEpsSubscriptionResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteEpsSubscription">
+			<wsdl:input message="tns:DeleteEpsSubscriptionRequest"/>
+			<wsdl:output message="tns:DeleteEpsSubscriptionResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetEpsSubscription">
+			<wsdl:input message="tns:GetEpsSubscriptionRequest"/>
+			<wsdl:output message="tns:GetEpsSubscriptionResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateEpsApn">
+			<wsdl:input message="tns:CreateEpsApnRequest"/>
+			<wsdl:output message="tns:CreateEpsApnResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteEpsApn">
+			<wsdl:input message="tns:DeleteEpsApnRequest"/>
+			<wsdl:output message="tns:DeleteEpsApnResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetEpsApn">
+			<wsdl:input message="tns:GetEpsApnRequest"/>
+			<wsdl:output message="tns:GetEpsApnResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateEpsImsiChange">
+			<wsdl:input message="tns:CreateEpsImsiChangeRequest"/>
+			<wsdl:output message="tns:CreateEpsImsiChangeResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateOcsRC">
+			<wsdl:input message="tns:CreateOcsRCRequest"/>
+			<wsdl:output message="tns:CreateOcsRCResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteOcsRC">
+			<wsdl:input message="tns:DeleteOcsRCRequest"/>
+			<wsdl:output message="tns:DeleteOcsRCResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetOcsRC">
+			<wsdl:input message="tns:GetOcsRCRequest"/>
+			<wsdl:output message="tns:GetOcsRCResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetOcsRC">
+			<wsdl:input message="tns:SetOcsRCRequest"/>
+			<wsdl:output message="tns:SetOcsRCResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetOcsBucket">
+			<wsdl:input message="tns:SetOcsBucketRequest"/>
+			<wsdl:output message="tns:SetOcsBucketResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteOcsBucket">
+			<wsdl:input message="tns:DeleteOcsBucketRequest"/>
+			<wsdl:output message="tns:DeleteOcsBucketResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetOcsBucket">
+			<wsdl:input message="tns:GetOcsBucketRequest"/>
+			<wsdl:output message="tns:GetOcsBucketResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetGprsProfileSharedFupGroup">
+			<wsdl:input message="tns:GetGprsProfileSharedFupGroupRequest"/>
+			<wsdl:output message="tns:GetGprsProfileSharedFupGroupResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetPcrfProfile">
+			<wsdl:input message="tns:SetPcrfProfileRequest"/>
+			<wsdl:output message="tns:SetPcrfProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetPcrfProfile">
+			<wsdl:input message="tns:GetPcrfProfileRequest"/>
+			<wsdl:output message="tns:GetPcrfProfileResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateGprsProfilePeriod">
+			<wsdl:input message="tns:CreateGprsProfilePeriodRequest"/>
+			<wsdl:output message="tns:CreateGprsProfilePeriodResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateOcsFnFBundle">
+			<wsdl:input message="tns:CreateOcsFnFBundleRequest"/>
+			<wsdl:output message="tns:CreateOcsFnFBundleResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetOcsFnFBundle">
+			<wsdl:input message="tns:SetOcsFnFBundleRequest"/>
+			<wsdl:output message="tns:SetOcsFnFBundleResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteOcsFnFBundle">
+			<wsdl:input message="tns:DeleteOcsFnFBundleRequest"/>
+			<wsdl:output message="tns:DeleteOcsFnFBundleResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateAtosVpn">
+			<wsdl:input message="tns:CreateAtosVpnRequest"/>
+			<wsdl:output message="tns:CreateAtosVpnResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteAtosVpn">
+			<wsdl:input message="tns:DeleteAtosVpnRequest"/>
+			<wsdl:output message="tns:DeleteAtosVpnResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateAtosEndUsers">
+			<wsdl:input message="tns:CreateAtosEndUsersRequest"/>
+			<wsdl:output message="tns:CreateAtosEndUsersResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateAtosExt">
+			<wsdl:input message="tns:CreateAtosExtRequest"/>
+			<wsdl:output message="tns:CreateAtosExtResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetAtosExt">
+			<wsdl:input message="tns:SetAtosExtRequest"/>
+			<wsdl:output message="tns:SetAtosExtResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteAtosExt">
+			<wsdl:input message="tns:DeleteAtosExtRequest"/>
+			<wsdl:output message="tns:DeleteAtosExtResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateAtosExtTransfer">
+			<wsdl:input message="tns:CreateAtosExtTransferRequest"/>
+			<wsdl:output message="tns:CreateAtosExtTransferResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateDnsSubscription">
+			<wsdl:input message="tns:CreateDnsSubscriptionRequest"/>
+			<wsdl:output message="tns:CreateDnsSubscriptionResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteDnsSubscription">
+			<wsdl:input message="tns:DeleteDnsSubscriptionRequest"/>
+			<wsdl:output message="tns:DeleteDnsSubscriptionResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetDnsSubscription">
+			<wsdl:input message="tns:GetDnsSubscriptionRequest"/>
+			<wsdl:output message="tns:GetDnsSubscriptionResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateImsSubscription">
+			<wsdl:input message="tns:CreateImsSubscriptionRequest"/>
+			<wsdl:output message="tns:CreateImsSubscriptionResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetImsSubscription">
+			<wsdl:input message="tns:SetImsSubscriptionRequest"/>
+			<wsdl:output message="tns:SetImsSubscriptionResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteImsSubscription">
+			<wsdl:input message="tns:DeleteImsSubscriptionRequest"/>
+			<wsdl:output message="tns:DeleteImsSubscriptionResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetImsSubscription">
+			<wsdl:input message="tns:GetImsSubscriptionRequest"/>
+			<wsdl:output message="tns:GetImsSubscriptionResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateUmpSipCred">
+			<wsdl:input message="tns:CreateUmpSipCredRequest"/>
+			<wsdl:output message="tns:CreateUmpSipCredResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteUmpSipCred">
+			<wsdl:input message="tns:DeleteUmpSipCredRequest"/>
+			<wsdl:output message="tns:DeleteUmpSipCredResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetUmpSipCred">
+			<wsdl:input message="tns:SetUmpSipCredRequest"/>
+			<wsdl:output message="tns:SetUmpSipCredResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetUmpHardware">
+			<wsdl:input message="tns:GetUmpHardwareRequest"/>
+			<wsdl:output message="tns:GetUmpHardwareResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateUmpHardware">
+			<wsdl:input message="tns:CreateUmpHardwareRequest"/>
+			<wsdl:output message="tns:CreateUmpHardwareResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteUmpHardware">
+			<wsdl:input message="tns:DeleteUmpHardwareRequest"/>
+			<wsdl:output message="tns:DeleteUmpHardwareResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetUmpHardware">
+			<wsdl:input message="tns:SetUmpHardwareRequest"/>
+			<wsdl:output message="tns:SetUmpHardwareResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetSuppService">
+			<wsdl:input message="tns:SetSuppServiceRequest"/>
+			<wsdl:output message="tns:SetSuppServiceResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetSuppService">
+			<wsdl:input message="tns:GetSuppServiceRequest"/>
+			<wsdl:output message="tns:GetSuppServiceResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateMtasSubscription">
+			<wsdl:input message="tns:CreateMtasSubscriptionRequest"/>
+			<wsdl:output message="tns:CreateMtasSubscriptionResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="SetMtasSubscription">
+			<wsdl:input message="tns:SetMtasSubscriptionRequest"/>
+			<wsdl:output message="tns:SetMtasSubscriptionResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteMtasSubscription">
+			<wsdl:input message="tns:DeleteMtasSubscriptionRequest"/>
+			<wsdl:output message="tns:DeleteMtasSubscriptionResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+		<wsdl:operation name="GetMtasSubscription">
+			<wsdl:input message="tns:GetMtasSubscriptionRequest"/>
+			<wsdl:output message="tns:GetMtasSubscriptionResponse"/>
+			<wsdl:fault name="fault" message="tns:Exception"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:binding name="ComptelAdapterServicesEndpointBinding" type="tns:ComptelAdapterServices">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="DeleteAaaProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetAaaProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteAcsProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetAcsProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateAlternativeRoamingProvider">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteAlternativeRoamingProvider">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetAlternativeRoamingProvider">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetBarringByCustomer">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetBarringByCustomer">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetBarringByIn">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetBarringByOperator">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetBarringByOperator">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetCallForwarding">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetCallForwarding">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateCallHold">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteCallHold">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetCallHold">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateCallWaiting">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetCallWaiting">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteCallWaiting">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetCallWaiting">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateClir">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetClir">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteClir">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetClir">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetCurContentFilter">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteCurContentFilter">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetCurContentFilter">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteDeleteSubscriber">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateGprs">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetGprs">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteGprs">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetGprs">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateGprsProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetGprsProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteGprsProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetGprsProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetGprsProfileCostControl">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetGprsProfileCostControl">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateGprsProfileFupBundle">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateGprsProfilePricePlan">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetGprsProfilePricePlan">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteGprsProfilePricePlan">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetGprsProfilePricePlan">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateImsiChange">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetImsiChange">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteImsiChange">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetImsiChange">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateLocalBreakOut">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteLocalBreakOut">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetLocalBreakOut">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateMca">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetMca">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteMca">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetMca">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateMms">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetMms">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteMms">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetMms">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateMsisdnChange">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetMsisdnChange">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteMsisdnChange">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetMsisdnChange">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateOcsBundle">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetOcsBundle">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteOcsBundle">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetOcsBundle">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateOcsDiscount">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetOcsDiscount">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteOcsDiscount">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetOcsDiscount">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateOcsProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetOcsProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteOcsProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetOcsProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetOcsRecharge">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreatePortedNumber">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetPortedNumber">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeletePortedNumber">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetPortedNumber">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreatePortedNumberNotification">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeletePortedNumberNotification">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetPortedNumberNotification">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetVoiceMail">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteVoiceMail">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetVoiceMail">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateVoiceMailDestination">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetVoiceMailDestination">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteVoiceMailDestination">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetVoiceMailPin">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateEpsSubscription">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetEpsSubscription">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteEpsSubscription">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetEpsSubscription">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateEpsApn">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteEpsApn">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetEpsApn">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateEpsImsiChange">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateOcsRC">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteOcsRC">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetOcsRC">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetOcsRC">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetOcsBucket">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteOcsBucket">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetOcsBucket">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetGprsProfileSharedFupGroup">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetPcrfProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetPcrfProfile">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateGprsProfilePeriod">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateOcsFnFBundle">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetOcsFnFBundle">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteOcsFnFBundle">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateAtosVpn">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteAtosVpn">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateAtosEndUsers">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateAtosExt">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetAtosExt">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteAtosExt">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateAtosExtTransfer">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateDnsSubscription">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteDnsSubscription">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetDnsSubscription">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateImsSubscription">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetImsSubscription">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteImsSubscription">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetImsSubscription">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateUmpSipCred">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteUmpSipCred">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetUmpSipCred">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetUmpHardware">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateUmpHardware">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteUmpHardware">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetUmpHardware">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetSuppService">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetSuppService">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="CreateMtasSubscription">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="SetMtasSubscription">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteMtasSubscription">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+		<wsdl:operation name="GetMtasSubscription">
+			<wsdl:input>
+				<soap:body parts="request" use="literal"/>
+				<soap:header message="tns:ComptelAdapterHeader" part="comptelAdapterHeader" use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body parts="response" use="literal"/>
+			</wsdl:output>
+			<wsdl:fault name="fault">
+				<soap:fault name="fault" use="literal"/>
+			</wsdl:fault>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:service name="ComptelAdapterServices.1.1">
+		<wsdl:port name="ComptelAdapterServicesEndpoint" binding="tns:ComptelAdapterServicesEndpointBinding">
+			<soap:address location="http://localhost:8080/ComptelAdapterServices"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>

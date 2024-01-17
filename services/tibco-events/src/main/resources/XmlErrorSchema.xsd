@@ -1,0 +1,157 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2006 rel. 3 sp2 (http://www.altova.com) by XMLSPY 2006 Enterprise Ed. Release 3, Installed for 10 users (with SMP from 2006-01-20 to 2008-01-21) (IBM) -->
+<xs:schema xmlns:err="http://www.vodafone.cz/Common/xml/Error" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jms="http://www.vodafone.cz/Common/xml/Jms" xmlns:tib="http://www.tibco.com/pe/EngineTypes" xmlns:orch="http://www.vodafone.cz/Orchestration/xml/DataTypes/v1_0" targetNamespace="http://www.vodafone.cz/Common/xml/Error" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:import namespace="http://www.tibco.com/pe/EngineTypes" schemaLocation="./TibcoSchemas.xsd" />
+  <xs:import namespace="http://www.vodafone.cz/Common/xml/Jms" schemaLocation="./XmlJmsSchema.xsd" />
+  <xs:import namespace="http://www.vodafone.cz/Orchestration/xml/DataTypes/v1_0" schemaLocation="./OrchestrationTypes_1_0.xsd" />
+  <xs:element name="exception">
+    <xs:annotation>
+      <xs:documentation>Exception (i.e. unexpected behavior).</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="message" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>Human-readable error message.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="messageCode" type="xs:string">
+          <xs:annotation>
+            <xs:documentation>Error code registered in the list of error codes.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="time" type="xs:dateTime" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Date and time when the exception was thrown.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="origin" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Identification of the process who caused the exception.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="application" type="xs:normalizedString">
+                <xs:annotation>
+                  <xs:documentation>Canonical application name, typically the name of the application in Tibco.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="serviceInstance" type="xs:normalizedString">
+                <xs:annotation>
+                  <xs:documentation>Identification of the the service instance, typically the Deployment global variable.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="transactionState" type="err:TransactionState" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>State of the transaction that throwed this exception (completed, failed or corrupted). The implicit value is "failed".</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="innerException" minOccurs="0" maxOccurs="unbounded">
+          <xs:annotation>
+            <xs:documentation>Exception that caused this message to be sent (either an 'exception' element, either the $error object in Tibco BusinessWorks).</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element ref="err:exception" />
+            </xs:sequence>
+            <xs:attribute name="role" type="xs:Name" use="optional" />
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="details" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="##any" processContents="skip" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element ref="tib:ErrorReport" minOccurs="0" />
+        <xs:element name="ServiceInventoryXML" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:any namespace="##any" processContents="skip" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TrackingIDs" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="BWInstanceID" type="xs:token" minOccurs="0" />
+              <xs:element name="IprocessProcedureName" type="xs:token" minOccurs="0" />
+              <xs:element name="IprocessStepName" type="xs:token" minOccurs="0" />
+              <xs:element name="ExecutionPlanFragmentName" type="xs:token" minOccurs="0" />
+              <xs:element name="Archive" type="xs:token" minOccurs="0" />
+              <xs:element name="Domain" type="xs:token" minOccurs="0" />
+              <xs:element name="BWprocessName" type="xs:token" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="failedRequest">
+    <xs:annotation>
+      <xs:documentation>Exception (i.e. unexpected behavior).</xs:documentation>
+    </xs:annotation>
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="request">
+          <xs:annotation>
+            <xs:documentation>Requested that causes the exception.</xs:documentation>
+          </xs:annotation>
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="messageId" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>Identifier of the original message of the request. This should help tracking the number of retries.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="CorrelationID" type="xs:token" minOccurs="0" />
+              <xs:element name="CustomerCode" type="xs:token" minOccurs="0" />
+              <xs:element name="BillingAccountCode" type="xs:token" minOccurs="0" />
+              <xs:element name="MSISDN" type="xs:token" minOccurs="0" />
+              <xs:element name="OrderId" type="xs:token" minOccurs="0" />
+              <xs:element name="queue" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>Name of the request queue, where the message has to be resent in case it is recommended.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element name="body" type="xs:string">
+                <xs:annotation>
+                  <xs:documentation>Request body.</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+              <xs:element ref="jms:JMSHeaders" minOccurs="0" />
+<!--
+              <xs:element ref="orch:orchIdentifiers" minOccurs="0">
+                <xs:annotation>
+                  <xs:documentation>Orchestration identifiers, needed to recognize the source (actually process component) of the request</xs:documentation>
+                </xs:annotation>
+              </xs:element>
+-->
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element ref="err:exception">
+          <xs:annotation>
+            <xs:documentation>Exception (i.e. unexpected behavior).</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+        <xs:element name="actionRule" type="xs:string" minOccurs="0">
+          <xs:annotation>
+            <xs:documentation>Identifier of the error  processing rule. The rule is typically set in the process global variable and is recognized by the error processing workflow.</xs:documentation>
+          </xs:annotation>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:simpleType name="TransactionState">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="completed" />
+      <xs:enumeration value="failed" />
+      <xs:enumeration value="corrupted" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

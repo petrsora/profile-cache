@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- edited with XMLSpy v2006 sp2 U (http://www.altova.com) by Tibor Lopusan (IBM) -->
+<!-- version 2.0.0 -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cse="http://www.vodafone.cz/CustomerSubscriber/xml/Events" xmlns:custcmn="http://www.vodafone.cz/Common/xml/Customer" xmlns:cmn="http://www.vodafone.cz/Common/xml/Common" xmlns:sprdcmn="http://www.vodafone.cz/Common/xml/ServiceProduct" targetNamespace="http://www.vodafone.cz/CustomerSubscriber/xml/Events" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:import namespace="http://www.vodafone.cz/Common/xml/Customer" schemaLocation="../../Schemas/Common/XmlCustomerSchema.xsd"/>
+	<xs:import namespace="http://www.vodafone.cz/Common/xml/Common" schemaLocation="../../Schemas/Common/XmlCommonSchema.xsd"/>
+	<xs:import namespace="http://www.vodafone.cz/Common/xml/ServiceProduct" schemaLocation="../../Schemas/Common/XmlServiceProductSchema.xsd"/>
+	<xs:element name="ADSLActivationEvent">
+		<xs:annotation>
+			<xs:documentation>Event ADSLActivationEvent is published for each ADSL ID that has been activated on Vodafone</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:ADSLEvent">
+					<xs:sequence>
+						<xs:element name="reasonCode">
+							<xs:annotation>
+								<xs:documentation>Possible values: STANDARD</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="subscriberType">
+							<xs:annotation>
+								<xs:documentation>Possible values: ADSL</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ADSLDeactivationEvent">
+		<xs:annotation>
+			<xs:documentation>Event ADSLDeactivationEvent is published for each ADSL ID that has been deactivated on Vodafone</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:ADSLEvent">
+					<xs:sequence>
+						<xs:element name="reasonCode">
+							<xs:annotation>
+								<xs:documentation>Possible values: STANDARD</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ADSLTransferOfResponsibilityEvent">
+		<xs:annotation>
+			<xs:documentation>Event ADSLTransferOfResponsibilityEvent is published when Transfer of responsibility is applied on ADSL</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:ADSLEvent">
+					<xs:sequence>
+						<xs:element name="newBillingAccountNumber" type="custcmn:BillingAccountNumber">
+							<xs:annotation>
+								<xs:documentation>New billing account number.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="newCustomerAccountNumber" type="custcmn:CustomerAccountNumber">
+							<xs:annotation>
+								<xs:documentation>New customer account number.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ICTServiceActivationEvent">
+		<xs:annotation>
+			<xs:documentation>ICTServiceActivationEvent is published for each ICTService that has been activated in Vodafone V4 systems.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:ICTServiceEvent">
+					<xs:sequence>
+						<xs:element name="reasonCode">
+							<xs:annotation>
+								<xs:documentation>Possible values: STANDARD</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="subscriberType">
+							<xs:annotation>
+								<xs:documentation>Possible values: ICTSERVICE</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ICTServiceDeactivationEvent">
+		<xs:annotation>
+			<xs:documentation>ICTServiceDeactivationEvent is published for each ICTService that has been deactivated in Vodafone V4 system</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:ICTServiceEvent">
+					<xs:sequence>
+						<xs:element name="reasonCode">
+							<xs:annotation>
+								<xs:documentation>Possible values: STANDARD</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ICTServiceTransferOfResponsibilityEvent">
+		<xs:annotation>
+			<xs:documentation>ICTServiceTransferOfResponsibilityEvent is published for each ICTService subscriber that has been transferred to new Customer Account in  Vodafone V4 system . This event will be also triggered in case ICTService subscriber is moved to new Billing Account. I such case the CustomerNumber and NewCustomerNuber will have same values.</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:ICTServiceEvent">
+					<xs:sequence>
+						<xs:element name="newBillingAccountNumber" type="custcmn:BillingAccountNumber">
+							<xs:annotation>
+								<xs:documentation>New billing account number.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="newCustomerAccountNumber" type="custcmn:CustomerAccountNumber">
+							<xs:annotation>
+								<xs:documentation>New customer account number.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="subscriberActivationEvent">
+		<xs:annotation>
+			<xs:documentation>Event subscriberActivationEvent is published for each MSISDN that has been activated on Vodafone</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:SubscriberEvent">
+					<xs:sequence>
+						<xs:element name="reasonCode">
+							<xs:annotation>
+								<xs:documentation>Possible values: STANDARD, PORTEDIN</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="subscriberType">
+							<xs:annotation>
+								<xs:documentation>Possible values: PREPAID, POSTPAID</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="subscriberDeactivationEvent">
+		<xs:annotation>
+			<xs:documentation>Event subscriberDeactivationEvent is published for each MSISDN that has been deactivated on Vodafone</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:SubscriberEvent">
+					<xs:sequence>
+						<xs:element name="reasonCode">
+							<xs:annotation>
+								<xs:documentation>Possible values: STANDARD, PORTEDOUT, MIGRATEDTOV2.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="subscriberMsisdnSwapEvent">
+		<xs:annotation>
+			<xs:documentation>Event subscriberMsisdnSwapEvent is called when customer changes his phone number for the new one</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:SubscriberEvent">
+					<xs:sequence>
+						<xs:element name="newMsisdn" type="custcmn:Msisdn">
+							<xs:annotation>
+								<xs:documentation>New MSISDN</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="serviceProductInstanceChangeEvent">
+		<xs:annotation>
+			<xs:documentation>Event serviceProductInstanceChangeEvent is published for each MSISDN where any service (e.g. MMS) component is being activated/deactivated</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:SubscriberEvent">
+					<xs:sequence>
+						<xs:element name="oldProductInstance" type="sprdcmn:ProductInstance" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>Old product instance before change.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="newProductInstance" type="sprdcmn:ProductInstance" minOccurs="0">
+							<xs:annotation>
+								<xs:documentation>New product instance after change.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="restrictionInstanceChangeEvent">
+		<xs:annotation>
+			<xs:documentation>Event restrictionInstanceChangeEvent is published whenever restriction is added to / removed from MSISDN</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:RestrictionEvent">
+					<xs:sequence>
+						<xs:element name="restrictionCode" type="xs:string">
+							<xs:annotation>
+								<xs:documentation>Type of restriction - i.e. FRAUD1</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="restrictionStatus">
+							<xs:simpleType>
+								<xs:restriction base="xs:string">
+									<xs:enumeration value="ACTIVE"/>
+									<xs:enumeration value="INACTIVE"/>
+								</xs:restriction>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="subscriberPre2PostMigrationEvent">
+		<xs:annotation>
+			<xs:documentation>SubscriberPre2PostMigrationEvent is published for each MSISDN for which billing account is migrated from prepaid to postpaid</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:SubscriberEvent"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="subscriberPost2PreMigrationEvent">
+		<xs:annotation>
+			<xs:documentation>SubscriberPost2PreMigrationEvent is published for each MSISDN for which billing account is migrated from postpaid to prepaid</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:SubscriberEvent"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="subscriberTransferOfResponsibilityEvent">
+		<xs:annotation>
+			<xs:documentation>CustomerTransferOfResponsibilityEvent is published when Transfer of responsibility is applied on Customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:SubscriberEvent">
+					<xs:sequence>
+						<xs:element name="newBillingAccountNumber" type="custcmn:BillingAccountNumber">
+							<xs:annotation>
+								<xs:documentation>New customer accoun number.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="newCustomerAccountNumber" type="custcmn:CustomerAccountNumber">
+							<xs:annotation>
+								<xs:documentation>New customer accoun number.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="customerActivationEvent">
+		<xs:annotation>
+			<xs:documentation>CustomerActivationEvent is published whenever new customer is created</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:CustomerEvent"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="customerDeactivationEvent">
+		<xs:annotation>
+			<xs:documentation>CustomerDeactivationEvent is published whenever customer is deactivated</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:CustomerEvent"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="billingAccountActivationEvent">
+		<xs:annotation>
+			<xs:documentation>BillingAccountActivationEvent is published whenever new billing account is created</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:CustomerEvent">
+					<xs:sequence>
+						<xs:element name="billingAccountNumber" type="xs:string"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="billingAccountDeactivationEvent">
+		<xs:annotation>
+			<xs:documentation>BillingAccountDeactivationEvent is published whenever new billing account is deactivated</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:CustomerEvent">
+					<xs:sequence>
+						<xs:element name="billingAccountNumber" type="xs:string"/>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="msisdnRepatriationEvent">
+		<xs:annotation>
+			<xs:documentation>Event msisdnRepatriationEvent is published when the nubmer is return back to Vodafone Resource Management. This event is triggered by MNP application</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="cmn:Event">
+					<xs:sequence>
+						<xs:element name="msisdn" type="custcmn:Msisdn">
+							<xs:annotation>
+								<xs:documentation>MSISDN</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="reasonCode">
+							<xs:annotation>
+								<xs:documentation>Possible values: RepatriateIN</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="communicationProfileChangeEvent">
+		<xs:annotation>
+			<xs:documentation>Event communicationProfileChangeEvent is published when the communication (scheduling) profile of subscribed is changed</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:SubscriberEvent">
+					<xs:sequence>
+						<xs:element name="communicationProfile" type="xs:token">
+							<xs:annotation>
+								<xs:documentation>Communication Profile</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MassPreactivationEvent">
+		<xs:annotation>
+			<xs:documentation>Event MassPreactivationEvent is published as part of Mass Preactivation. Only Dispatcher then uses this event, other Legacy applications ignore it</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:RestrictionEvent"/>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="msisdn" type="xs:string"/>
+	<xs:element name="reasonCode" type="xs:string"/>
+	<xs:element name="FMSActivationEvent">
+		<xs:annotation>
+			<xs:documentation>Event FMSActivationEvent is published for each FMS ID that has been activated on Vodafone</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:FMSEvent">
+					<xs:sequence>
+						<xs:element name="productCode">
+							<xs:annotation>
+								<xs:documentation>Possible values: PRFMS</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="reasonCode">
+							<xs:annotation>
+								<xs:documentation>Possible values: STANDARD</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="subscriberType">
+							<xs:annotation>
+								<xs:documentation>Possible values: FMS</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FMSDeactivationEvent">
+		<xs:annotation>
+			<xs:documentation>Event FMSDeactivationEvent is published for each FMS ID that has been deactivated on Vodafone</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:FMSEvent">
+					<xs:sequence>
+						<xs:element name="reasonCode">
+							<xs:annotation>
+								<xs:documentation>Possible values: STANDARD</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="FMSTransferOfResponsibilityEvent">
+		<xs:annotation>
+			<xs:documentation>Event FMSTransferOfResponsibilityEvent is published when Transfer of responsibility is applied on FMS</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:FMSEvent">
+					<xs:sequence>
+						<xs:element name="newBillingAccountNumber" type="custcmn:BillingAccountNumber">
+							<xs:annotation>
+								<xs:documentation>New billing account number.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="newCustomerAccountNumber" type="custcmn:CustomerAccountNumber">
+							<xs:annotation>
+								<xs:documentation>New customer account number.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="fixSubscriberActivationEvent">
+		<xs:annotation>
+			<xs:documentation>Event subscriberActivationEvent is published for each MSISDN that has been activated on Vodafone</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:FixSubscriberEvent">
+					<xs:sequence>
+						<xs:element name="reasonCode">
+							<xs:annotation>
+								<xs:documentation>Possible values: STANDARD, PORTEDIN</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
+						<xs:element name="subscriberType">
+							<xs:annotation>
+								<xs:documentation>Possible values: PREPAID, POSTPAID</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="fixSubscriberDeactivationEvent">
+		<xs:annotation>
+			<xs:documentation>Event subscriberDeactivationEvent is published for each MSISDN that has been deactivated on Vodafone</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:FixSubscriberEvent">
+					<xs:sequence>
+						<xs:element name="reasonCode">
+							<xs:annotation>
+								<xs:documentation>Possible values: STANDARD, PORTEDOUT, MIGRATEDTOV2.</xs:documentation>
+							</xs:annotation>
+							<xs:simpleType>
+								<xs:restriction base="xs:string"/>
+							</xs:simpleType>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="fixSubscriberIsdnSwapEvent">
+		<xs:annotation>
+			<xs:documentation>Event subscriberMsisdnSwapEvent is called when customer changes his phone number for the new one</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:FixSubscriberEvent">
+					<xs:sequence>
+						<xs:element name="newIsdn" type="custcmn:ISDN">
+							<xs:annotation>
+								<xs:documentation>New ISDN</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="fixSubscriberTransferOfResponsibilityEvent">
+		<xs:annotation>
+			<xs:documentation>CustomerTransferOfResponsibilityEvent is published when Transfer of responsibility is applied on Customer</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:complexContent>
+				<xs:extension base="custcmn:FixSubscriberEvent">
+					<xs:sequence>
+						<xs:element name="newBillingAccountNumber" type="custcmn:BillingAccountNumber">
+							<xs:annotation>
+								<xs:documentation>New customer accoun number.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+						<xs:element name="newCustomerAccountNumber" type="custcmn:CustomerAccountNumber">
+							<xs:annotation>
+								<xs:documentation>New customer accoun number.</xs:documentation>
+							</xs:annotation>
+						</xs:element>
+					</xs:sequence>
+				</xs:extension>
+			</xs:complexContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="subscriberReleaseEvent" type="cse:SubscriberReleaseEvent">
+		<xs:annotation>
+			<xs:documentation>This event will be published everytime the specific inventory resource has been released, it should always carry a reference to the source of the event, i.e. order or event that caused inventory resource release</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:simpleType name="SubscriberType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="ISDN"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:complexType name="Subscriber">
+		<xs:annotation>
+			<xs:documentation>Subscriber complex type definition</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="subscriberType" type="cse:SubscriberType">
+				<xs:annotation>
+					<xs:documentation>Type of the subscriber</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="subscriberId" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>ID of the subscriber</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ExternalKey">
+		<xs:annotation>
+			<xs:documentation>External key complex type definition</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="keyType" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Type of the external key (i.e. "OrderId", "ISDN", "IMSI" etc.)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="keyValue" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>External key value (i.e. order ID, ISDN number, IMSI number etc.)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="ExternalKeyCollection">
+		<xs:annotation>
+			<xs:documentation>External key collection complex type definition (i.e. related order ID)</xs:documentation>
+		</xs:annotation>
+		<xs:sequence>
+			<xs:element name="externalKey" type="cse:ExternalKey" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>Type of the external key (i.e. "orderId", "ISDN", etc.)</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="SubscriberReleaseEvent">
+		<xs:annotation>
+			<xs:documentation>This event will be published everytime the specific subscription resource has been released, it should always carry a reference to the source of the event, i.e. order or event that caused subscription release</xs:documentation>
+		</xs:annotation>
+		<xs:complexContent>
+			<xs:extension base="cmn:Event">
+				<xs:sequence>
+					<xs:element name="subscriber" type="cse:Subscriber">
+						<xs:annotation>
+							<xs:documentation>Subscriber identification</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+					<xs:element name="externalKeys" type="cse:ExternalKeyCollection">
+						<xs:annotation>
+							<xs:documentation>Collection of external keys of related events that caused the change (i.e. related order ID)</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:group name="AnyISDNEvent">
+		<xs:annotation>
+			<xs:documentation>Group of all possible ISDN events.</xs:documentation>
+		</xs:annotation>
+		<xs:choice>
+			<xs:element ref="cse:fixSubscriberActivationEvent"/>
+			<xs:element ref="cse:fixSubscriberDeactivationEvent"/>
+			<xs:element ref="cse:fixSubscriberIsdnSwapEvent"/>
+			<xs:element ref="cse:fixSubscriberTransferOfResponsibilityEvent"/>
+			<xs:element ref="cse:subscriberReleaseEvent"/>
+		</xs:choice>
+	</xs:group>
+</xs:schema>

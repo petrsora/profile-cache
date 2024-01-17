@@ -1,0 +1,111 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!-- version 2.0.0-->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:sprdcmn="http://www.vodafone.cz/Common/xml/ServiceProduct" xmlns:cmn="http://www.vodafone.cz/Common/xml/Common" targetNamespace="http://www.vodafone.cz/Common/xml/ServiceProduct" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:import namespace="http://www.vodafone.cz/Common/xml/Common" schemaLocation="./XmlCommonSchema.xsd" />
+  <xs:annotation>
+    <xs:documentation>Service product common XML schema.</xs:documentation>
+  </xs:annotation>
+  <xs:simpleType name="ProductInstanceKey">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:simpleType name="ProductParameterKey">
+    <xs:restriction base="xs:string" />
+  </xs:simpleType>
+  <xs:complexType name="ProductOfferingKey">
+    <xs:sequence>
+      <xs:element name="productCode" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Code of the product</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="productVersion" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Version of the product</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="productDescription" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Product descriotion.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="productOfferingKey" type="sprdcmn:ProductOfferingKey">
+    <xs:annotation>
+      <xs:documentation>Product offering key of this product instance</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="ProductParameterCollection">
+    <xs:annotation>
+      <xs:documentation>Parameter collection of service product instance</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="productParameterInstance" type="sprdcmn:ProductParameter" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="productParameters" type="sprdcmn:ProductParameterCollection">
+    <xs:annotation>
+      <xs:documentation>Collection of product parameters.</xs:documentation>
+    </xs:annotation>
+  </xs:element>
+  <xs:complexType name="ProductParameter">
+    <xs:annotation>
+      <xs:documentation>Parameter of service product instance</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="name" type="xs:string">
+        <xs:annotation>
+          <xs:documentation>Name of the product parameter</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="isLeaf" type="xs:boolean" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Is the parameter leaf? (No childern parameters) (Yes - true, or not presented)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="value" type="xs:string" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Value of the parameter</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element name="productParameters" type="sprdcmn:ProductParameterCollection" minOccurs="0">
+        <xs:annotation>
+          <xs:documentation>Subparameters (child parameters)</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ProductInstance">
+    <xs:complexContent>
+      <xs:extension base="cmn:ManagedEntity">
+        <xs:sequence>
+          <xs:element name="productInstanceKey" type="sprdcmn:ProductInstanceKey" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Primary key of the product instance</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element ref="sprdcmn:productOfferingKey" />
+          <xs:element name="activeFrom" type="xs:dateTime" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Starting date of product instance activation</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element name="activeTo" type="xs:dateTime" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>End date of hte product instance activation</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element ref="sprdcmn:productParameters" minOccurs="0" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ProductInstanceCollection">
+    <xs:annotation>
+      <xs:documentation>Collection of product instances.</xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element name="productInstance" type="sprdcmn:ProductInstance" minOccurs="0" maxOccurs="unbounded" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

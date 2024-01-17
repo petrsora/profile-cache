@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ns0:subscriberActivationEvent xmlns:ns0="http://www.vodafone.cz/CustomerSubscriber/xml/Events">
+    <ns1:header xmlns:ns1="http://www.vodafone.cz/Common/xml/Common">
+        <ns1:correlationId>1350292116400</ns1:correlationId>
+        <ns1:eventTimeStamp>2012-10-15T11:08:36.4+02:00</ns1:eventTimeStamp>
+        <ns1:applicationCode>V4 Tibco Integration</ns1:applicationCode>
+        <ns1:effectiveDate>2012-10-15T11:08:36.4+02:00</ns1:effectiveDate>
+    </ns1:header>
+    <ns1:customerAccountNumber xmlns:ns1="http://www.vodafone.cz/Common/xml/Customer">1028008181</ns1:customerAccountNumber>
+    <ns1:billingAccountNumber xmlns:ns1="http://www.vodafone.cz/Common/xml/Customer">31944878</ns1:billingAccountNumber>
+    <ns1:msisdn xmlns:ns1="http://www.vodafone.cz/Common/xml/Customer">420777350246</ns1:msisdn>
+    <ns0:reasonCode>PORDTEDIN</ns0:reasonCode>
+    <ns0:subscriberType>POSTPAID</ns0:subscriberType>
+</ns0:subscriberActivationEvent>

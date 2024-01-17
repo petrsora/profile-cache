@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <parent>
+        <artifactId>services</artifactId>
+        <groupId>cz.vodafone.profilecache</groupId>
+        <version>10.0-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>cz.vodafone.profilecache.services</groupId>
+    <artifactId>comptel-adapter-client</artifactId>
+    <name>${project.groupId}:${project.artifactId}</name>
+    <description />
+    <dependencies>
+        <dependency>
+            <groupId>org.jboss.ws.cxf</groupId>
+            <artifactId>jbossws-cxf-client</artifactId>
+            <scope>provided</scope>
+        </dependency>
+    </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.jboss.ws.plugins</groupId>
+                <artifactId>maven-jaxws-tools-plugin</artifactId>
+                <configuration>
+                    <verbose>true</verbose>
+                </configuration>
+                <executions>
+                    <execution>
+                        <id>My execution</id>
+                        <goals>
+                            <goal>wsconsume</goal>
+                        </goals>
+                        <configuration>
+                            <wsdls>
+                                <wsdl>${basedir}/src/main/resources/WSDL/ComptelAdapterServices.1.1.wsdl</wsdl>
+                            </wsdls>
+                            <targetPackage>cz.vodafone.profilecache.services.compteladapterclient</targetPackage>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+</project>

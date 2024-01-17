@@ -1,0 +1,111 @@
+<!-- edited with XMLSpy v2006 rel. 3 U (http://www.altova.com) by Jiri Vejmelka (IBM) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.vodafone.cz/Common/xml/Header" targetNamespace="http://www.vodafone.cz/Common/xml/Header" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:complexType name="TraceIdentifier">
+		<xs:sequence>
+			<xs:element name="applicationId" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Identifier of sub-operator.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="serviceId" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Identifier of called enterprise service.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="serviceInterfaceVersion" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Version of called enterprise service.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="timestamp" type="xs:dateTime" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Date and time when service was called on side of consumer.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="referenceId" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Unique identifier of request.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="correlationId" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>Unique identifier of use case by consumer to be able to correlate set of requests.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="identityId" type="xs:string">
+				<xs:annotation>
+					<xs:documentation>Unique identifier of calling application.</xs:documentation>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="traceIdentifier" type="tns:TraceIdentifier"/>
+	<xs:complexType name="UserIdentifier">
+		<xs:sequence>
+			<xs:element name="type" type="xs:string"/>
+			<xs:element name="id" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="userIdentifier" type="tns:UserIdentifier"/>
+	<xs:complexType name="SessionIdentifier">
+		<xs:sequence>
+			<xs:element name="type" type="xs:string"/>
+			<xs:element name="id" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="sessionIdentifier" type="tns:SessionIdentifier"/>
+	<xs:complexType name="AnyApplicationContext">
+		<xs:sequence>
+			<xs:choice>
+				<xs:element ref="tns:mobileContext"/>
+				<xs:element ref="tns:serverContext"/>
+				<xs:element ref="tns:webContext"/>
+			</xs:choice>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="MobileContext">
+		<xs:sequence>
+			<xs:element name="platform" type="tns:platformType"/>
+			<xs:element name="pushId" type="xs:string" minOccurs="0"/>
+			<xs:element name="userId" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="mobileContext" type="tns:MobileContext"/>
+	<xs:complexType name="ServerContext">
+		<xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="serverContext" type="tns:ServerContext"/>
+	<xs:complexType name="WebContext">
+		<xs:sequence>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="webContext" type="tns:WebContext"/>
+	<xs:simpleType name="platformType">
+		<xs:annotation>
+			<xs:documentation>Possible Platforms. Possible values: NONE, MY, ALL.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="iOS"/>
+			<xs:enumeration value="Android"/>
+			<xs:enumeration value="WindowsPhone"/>
+			<xs:enumeration value="Windows"/>
+			<xs:enumeration value="Unix"/>
+			<xs:enumeration value="Linux"/>
+			<xs:enumeration value="MacOS"/>
+			<xs:enumeration value="Other"/>
+			<xs:enumeration value="Unknown"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:element name="applicationContext" type="tns:AnyApplicationContext"/>
+	<xs:complexType name="VfHeader">
+		<xs:sequence>
+			<xs:element ref="tns:traceIdentifier"/>
+			<xs:element ref="tns:userIdentifier" minOccurs="0"/>
+			<xs:element ref="tns:sessionIdentifier" minOccurs="0"/>
+			<xs:element ref="tns:applicationContext" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="vfHeader" type="tns:VfHeader"/>
+</xs:schema>

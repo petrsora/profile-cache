@@ -1,0 +1,42 @@
+#!/bin/bash
+#----------------------------------------------------------
+# Description: Script for managed jboss server (start,
+#              stop,..)
+# File Name:   jbossctl
+# Authors:     Martin Juza <martin.juza@vodafone.com>
+# Revisions:   2006/03/14   First version
+# 2008/09/01 - Libor Hemola - adapted for jboss running on nonstandard ports ... shutdown param added
+# 2013/11/26 - Milan Kohut - updated for JBoss7 and new PC
+#----------------------------------------------------------
+
+#configuration
+
+LOG_HOME=/logs/profcach
+BIND_ADDRESS=0.0.0.0
+export JAVA_HOME=/app01/locdisp/java/profcach
+export JAVA_OPTS="-d64 -server -Xms256m -Xmx2048m -verbose:gc -XX:+UseConcMarkSweepGC -XX:+PrintGCTimeStamps -Xloggc:$LOG_HOME/profile-cache-gc.log -XX:+PrintGCDetails"
+
+jbossbin=/app01/profcach/jboss-as-7.1.1.Final/bin
+jbossout=$LOG_HOME/server.out
+
+case $1 in
+    'start')
+	cat $LOG_HOME/profile-cache-gc.log | bzip2 > $LOG_HOME/profile-cache-gc.`date +%y%m%d%H%M`.bz2
+        cd $jbossbin
+        # Start Jboss app server
+        nohup ./standalone.sh -c standalone-full.xml -b $BIND_ADDRESS >> $jbossout 2>&1 &
+        ;;
+    'stop')
+        cd $jbossbin
+        # Stop Jboss app server
+        ./jboss-cli.sh --connect controller=127.0.0.1:9999 command=:shutdown
+        # ./jboss-cli.sh --connect command=:shutdown
+        ;;
+    'restart')
+        $0 stop
+        $0 start
+        ;;
+    *)
+        echo "usage: $0 {start|stop|restart}"
+        ;;
+esac

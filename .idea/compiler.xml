@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="core" />
+        <module name="init-load" />
+        <module name="configuration" />
+        <module name="profile-provider" />
+        <module name="bulk-upload" />
+        <module name="configuration-ejb" />
+        <module name="events-listener" />
+        <module name="events" />
+        <module name="tibco-jms-client" />
+        <module name="tibco-events" />
+        <module name="comptel-adapter-client" />
+        <module name="location-dispatcher-client" />
+      </profile>
+    </annotationProcessing>
+  </component>
+</project>

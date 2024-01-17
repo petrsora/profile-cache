@@ -1,0 +1,22 @@
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <servlet>
+        <servlet-name>ProfileProviderService</servlet-name>
+        <servlet-class>cz.vodafone.profilecache.profileprovider.ws.ProfileProviderServiceImpl</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+
+    <servlet>
+        <servlet-name>StatusPage</servlet-name>
+        <servlet-class>cz.vodafone.profilecache.profileprovider.servlets.StatusPageServlet</servlet-class>
+        <load-on-startup>2</load-on-startup>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>ProfileProviderService</servlet-name>
+        <!-- Unfortunate legacy from original PC. In case of any chance change it to "...Service" -->
+        <url-pattern>/profile</url-pattern>
+    </servlet-mapping>
+
+</web-app>

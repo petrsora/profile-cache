@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:cmn="http://www.vodafone.cz/Common/xml/Common" xmlns="http://www.vodafone.cz/Orchestration/xml/DataTypes/v1_0" targetNamespace="http://www.vodafone.cz/Orchestration/xml/DataTypes/v1_0" elementFormDefault="qualified" attributeFormDefault="unqualified">
+  <xs:import namespace="http://www.vodafone.cz/Common/xml/Common" schemaLocation="../../Schemas/Common/XmlCommonSchema.xsd" />
+  <xs:complexType name="OrchIdentType">
+    <xs:sequence>
+      <xs:element name="orderID" type="xs:string" />
+      <xs:element name="orderRef" type="xs:string" />
+      <xs:element name="planID" type="xs:string" />
+      <xs:element name="planItemID" type="xs:string" />
+      <xs:element name="processComponentID" type="xs:string" />
+      <xs:element name="processComponentName" type="xs:string" />
+      <xs:element name="processComponentVersion" type="xs:string" minOccurs="0" />
+      <xs:element name="originator" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="orchIdentifiers" type="OrchIdentType" />
+  <xs:complexType name="OrchestrationRequest">
+    <xs:complexContent>
+      <xs:extension base="cmn:Request">
+        <xs:sequence>
+          <xs:element ref="orchIdentifiers" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Orchestration identifiers aggregator</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OrchestrationResponse">
+    <xs:complexContent>
+      <xs:extension base="cmn:Response">
+        <xs:sequence>
+          <xs:element ref="orchIdentifiers" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Orchestration identifiers aggregator</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="OrchestrationEvent">
+    <xs:complexContent>
+      <xs:extension base="cmn:Event">
+        <xs:sequence>
+          <xs:element ref="orchIdentifiers" minOccurs="0">
+            <xs:annotation>
+              <xs:documentation>Orchestration identifiers aggregator</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+</xs:schema>

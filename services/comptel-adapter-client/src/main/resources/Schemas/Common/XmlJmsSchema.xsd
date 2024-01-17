@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- edited with XMLSpy v2010 (http://www.altova.com) by Marco Montesissa (Accenture) -->
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:jms="http://www.vodafone.cz/Common/xml/Jms" targetNamespace="http://www.vodafone.cz/Common/xml/Jms" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:element name="JMSHeaders">
+		<xs:annotation>
+			<xs:documentation>List of all recognized JSM Headers</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<!-- Standard JMS headers -->
+				<xs:element name="JMSOriginalDestination" type="xs:token" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Original Destination where the message should, in case be rest to, this is different than the reply to message. The Error handling will resubmit the message to this queue.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="JMSMessageId" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Message ID of the jms message who triggered the exception, this is useful just to track the message. Once resubmitted the messages will have a new ID assigned.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="JMSReplyTo" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>JMS Reply to message, of the original message this will be handled by a 'TargetSystem' appropriately</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="JMSType" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>JMS Type of the message, this is received as EVENT by the dispatcher , and based on this the configuration file is looked up and </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="JMSCorrelationID" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>This is unprocessed by the dispatcher but forwarded to the TargetSystem, it could be needed to reply at the end of the last process.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="JMSPriority" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>JMS Priority is unprocessed by the dispatcher, the default value is 4 , because otherwise sequencing over the JMS queue will not be correctly maintained</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<!-- OSS Headers for events -->
+				<xs:element name="JMSXDeliveryCount" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>JMSXDeliveryCount will not be processed from the dispatcher, unless it is used to detect a loop when the ems server continues to redeliver the message, in case it will </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="OSS_EVENT_TYPE" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Event type will be used accordingly to the JMSType, but will contain more details about the evnet in case it's needed to be processed by the same one.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="OSS_APPLICATION_DN" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>It is used to track the destination of the event.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="OSS_MANAGED_ENTITY_PRIMARY_KEY" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Contains the instance ID of the EVENT or in case the MANAGED entity tipe is specified a related ID , which is used by the dispatcher to identify the INSTANCE id in the event table</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="OSS_MANAGED_ENTITY_TYPE" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Is used to identify the value of the primary key, in case it is empty the primary key is an instance id for the dispatcher and will be processed as a lookup on the intanceid column on the table. </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="OSS_EVENT_TIME" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Time when the event has been generated (e.g. received by the JMS dispatcher)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="OSS_NOTIFICATION_ID" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>For future uses</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<!-- OSS Headers for request/response -->
+				<xs:element name="OSS_MESSAGE_TYPE" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>For future uses</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="OSS_MESSAGE_NAME" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>For future uses</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="OSS_APPLICATION_TYPE" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>For future uses</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="OSS_REQUEST_SENDER_ID" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>For future uses</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="OSS_REPLY_SENDER_ID" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>For future uses</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="OSS_REPLYTO_DESTINATION_TYPE" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>For future uses</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<!-- Custom headers used by all applications -->
+				<xs:element name="VCZ_SEQUENCING_KEY" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Process sequencing key. The expected value is specified by the service provider and clients MUST comply.This field will be used for all inbound events by the dispatcher to schedule the activities for each event, 1 event can be only processed at a time with the same sequencing key (also known  as CorrelationID for sequencing).</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="VCZ_DELIVERY_COUNT" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Currently not used by the dispatcher</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<!-- Custom headers used by scheduler -->
+				<xs:element name="VCZ_SCHED_DESTINATION_NAME" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Currently not used by the dispatcher</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="VCZ_SCHED_DESTINATION_TYPE" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Currently not used by the dispatcher</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="VCZ_SCHED_DELIVERY_DATE" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Used by the scheduler.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="VCZ_SUBOPERATOR" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation/>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="VCZ_SKIP_JMS_DESTINATION" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Value is JMS destination name. If specified, error handling sends original message to this JMS destination when SKIP action is selected in EHC. Optional for input to error handling.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="VCZ_EHC_ACTION" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Selected error handling action  values can be REPROCESS or SKIP. Mandatory for ouput from error handling.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ACN_ACCOUNTCODE" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>This is an informative jms header, contains the AccountCode (also known in siebel as AccountNumber or CustomerCode in Kenan) , it is useful just to track useful search information on the Errorhandling Console. </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ACN_BILLINGPROFILE" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>This is an informative jms header, contains the BillingProfile Code (also known in siebel as BillingProfileNumber or BillingAccountCode in Kenan) , it is useful just to track useful search information on the Errorhandling Console. </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ACN_ORDERID" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>This contains the OrderID also known as Order NUmber in siebel, this is a field carrying useful information to search events trough the </xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ACN_MSISDN" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>This contains the information about the msisdn related to the message, this information is useful for trackin and searching on the error handling console.</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="SEP_REQUEST_RESEND" type="xs:boolean" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation/>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ACN_ORDER_COMPLEXITY" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation/>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ACN_SIEBEL_PRIORITY" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation/>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ACN_INSTANCEID" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation/>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>
